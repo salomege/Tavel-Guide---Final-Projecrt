@@ -19,6 +19,7 @@
 		F19A89922B588B8300CB4AB5 /* ImpressionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A89912B588B8300CB4AB5 /* ImpressionsViewController.swift */; };
 		F19A899E2B59DECD00CB4AB5 /* CityItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A899D2B59DECD00CB4AB5 /* CityItemCollectionViewCell.swift */; };
 		F19A89A02B59DF9100CB4AB5 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A899F2B59DF9100CB4AB5 /* City.swift */; };
+		F19A89A22B59E01400CB4AB5 /* CitiesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A89A12B59E01400CB4AB5 /* CitiesListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		F19A89912B588B8300CB4AB5 /* ImpressionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpressionsViewController.swift; sourceTree = "<group>"; };
 		F19A899D2B59DECD00CB4AB5 /* CityItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		F19A899F2B59DF9100CB4AB5 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		F19A89A12B59E01400CB4AB5 /* CitiesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			children = (
 				F19A898B2B58880300CB4AB5 /* CitiesListViewController.swift */,
 				F19A899D2B59DECD00CB4AB5 /* CityItemCollectionViewCell.swift */,
+				F19A89A12B59E01400CB4AB5 /* CitiesListViewModel.swift */,
 			);
 			path = CitiesList;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F19A897A2B58811900CB4AB5 /* TabBarController.swift in Sources */,
+				F19A89A22B59E01400CB4AB5 /* CitiesListViewModel.swift in Sources */,
 				F19A899E2B59DECD00CB4AB5 /* CityItemCollectionViewCell.swift in Sources */,
 				F19A89902B588A5600CB4AB5 /* FoodAdvisorViewController.swift in Sources */,
 				F19A898E2B58898A00CB4AB5 /* MapViewController.swift in Sources */,
