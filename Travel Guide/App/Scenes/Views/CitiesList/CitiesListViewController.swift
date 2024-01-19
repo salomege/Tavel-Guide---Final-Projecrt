@@ -10,32 +10,11 @@ import UIKit
 final class CitiesListViewController: UIViewController {
     
     // MARK: - Properties
-    private let logoImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "logo")
-        imageView.contentMode = .scaleAspectFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.heightAnchor.constraint(equalToConstant: 48).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 48).isActive = true
-        return imageView
-    }()
-    
-    private let profileButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Profile", for: .normal)
-        button.backgroundColor = UIColor(red: 170 / 255.0, green: 199 / 255.0, blue: 159 / 255.0, alpha: 1)
-        button.layer.cornerRadius = 8
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.heightAnchor.constraint(equalToConstant: 32).isActive = true
-        button.widthAnchor.constraint(equalToConstant: 78).isActive = true
-        return button
-    }()
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.minimumInteritemSpacing = 15
+        layout.minimumInteritemSpacing = 16
         layout.minimumLineSpacing = 16
         layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         
@@ -60,18 +39,9 @@ final class CitiesListViewController: UIViewController {
     // MARK: - Private Methods
     private func setup() {
         view.backgroundColor = UIColor(red: 170 / 255.0, green: 199 / 255.0, blue: 159 / 255.0, alpha: 1)
-        setupNavigationBar()
         setupCollectionView()
     }
-    
-    private func setupNavigationBar() {
-        let logoItem = UIBarButtonItem(customView: logoImageView)
-        navigationItem.leftBarButtonItem = logoItem
-        
-        let profileButtonItem = UIBarButtonItem(customView: profileButton)
-        navigationItem.rightBarButtonItem = profileButtonItem
-    }
-    
+ 
     private func setupCollectionView() {
         view.addSubview(collectionView)
         
@@ -118,7 +88,7 @@ extension CitiesListViewController: UICollectionViewDelegateFlowLayout {
         + flowLayout.minimumInteritemSpacing
         
         let width = Int((collectionView.bounds.width - totalSpace) / 2)
-        let height = 278
+        let height = 280
         
         return CGSize(width: width, height: height)
     }
