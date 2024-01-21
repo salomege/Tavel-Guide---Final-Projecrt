@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class TabBarController: UITabBarController {
 
@@ -28,13 +29,19 @@ class TabBarController: UITabBarController {
     // MARK: - Methods
     
     private func setupTabs() {
-        
+
         let home = createNavigation("Home", UIImage(systemName: "house"), controller: HomePageViewController())
         let places = createNavigation("Top Places", UIImage(systemName: "mountain.2"), controller: CitiesListViewController())
         let map = createNavigation("Map", UIImage(systemName: "mappin.and.ellipse"), controller: MapViewController())
-        let foodAdvisor = createNavigation("Food Advisor", UIImage(systemName: "fork.knife"), controller: FoodAdvisorViewController())
+
+        guard let foodAdvisorHostingController = FoodAdvisorHostingController(coder: NSCoder()) else {
+                fatalError("Failed to create FoodAdvisorHostingController")
+            }
+
+            let foodAdvisor = createNavigation("Food Advisor", UIImage(systemName: "fork.knife"), controller: foodAdvisorHostingController)
+
         let impressions = createNavigation("Impressions", UIImage(systemName: "person.3.fill"), controller: ImpressionsViewController())
-        
+
         setViewControllers([home, places, map, foodAdvisor, impressions], animated: true)
     }
     

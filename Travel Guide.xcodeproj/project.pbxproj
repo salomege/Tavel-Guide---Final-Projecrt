@@ -17,6 +17,16 @@
 		F19A898E2B58898A00CB4AB5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A898D2B58898A00CB4AB5 /* MapViewController.swift */; };
 		F19A89902B588A5600CB4AB5 /* FoodAdvisorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A898F2B588A5600CB4AB5 /* FoodAdvisorViewController.swift */; };
 		F19A89922B588B8300CB4AB5 /* ImpressionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A89912B588B8300CB4AB5 /* ImpressionsViewController.swift */; };
+		F1B2AF262B5CBE57003B557A /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF252B5CBE57003B557A /* Map.swift */; };
+		F1B2AF282B5CBFCB003B557A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF272B5CBFCB003B557A /* ContentView.swift */; };
+		F1B2AF2A2B5CC00B003B557A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF292B5CC00B003B557A /* Location.swift */; };
+		F1B2AF2C2B5CC042003B557A /* LocationsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF2B2B5CC042003B557A /* LocationsDataService.swift */; };
+		F1B2AF2E2B5CC06F003B557A /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF2D2B5CC06F003B557A /* LocationsView.swift */; };
+		F1B2AF302B5CC0A6003B557A /* LocationsPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF2F2B5CC0A6003B557A /* LocationsPreviewView.swift */; };
+		F1B2AF322B5CC0D6003B557A /* LocationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF312B5CC0D6003B557A /* LocationListView.swift */; };
+		F1B2AF342B5CC159003B557A /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF332B5CC159003B557A /* LocationsViewModel.swift */; };
+		F1B2AF382B5CDDC5003B557A /* FoodAdvisorHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF372B5CDDC5003B557A /* FoodAdvisorHostingController.swift */; };
+		F1B2AF3A2B5D3514003B557A /* FoodAdvisorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF392B5D3514003B557A /* FoodAdvisorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +42,16 @@
 		F19A898D2B58898A00CB4AB5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F19A898F2B588A5600CB4AB5 /* FoodAdvisorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAdvisorViewController.swift; sourceTree = "<group>"; };
 		F19A89912B588B8300CB4AB5 /* ImpressionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpressionsViewController.swift; sourceTree = "<group>"; };
+		F1B2AF252B5CBE57003B557A /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		F1B2AF272B5CBFCB003B557A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F1B2AF292B5CC00B003B557A /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		F1B2AF2B2B5CC042003B557A /* LocationsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsDataService.swift; sourceTree = "<group>"; };
+		F1B2AF2D2B5CC06F003B557A /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
+		F1B2AF2F2B5CC0A6003B557A /* LocationsPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsPreviewView.swift; sourceTree = "<group>"; };
+		F1B2AF312B5CC0D6003B557A /* LocationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListView.swift; sourceTree = "<group>"; };
+		F1B2AF332B5CC159003B557A /* LocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModel.swift; sourceTree = "<group>"; };
+		F1B2AF372B5CDDC5003B557A /* FoodAdvisorHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAdvisorHostingController.swift; sourceTree = "<group>"; };
+		F1B2AF392B5D3514003B557A /* FoodAdvisorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAdvisorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +159,14 @@
 			isa = PBXGroup;
 			children = (
 				F19A898D2B58898A00CB4AB5 /* MapViewController.swift */,
+				F1B2AF252B5CBE57003B557A /* Map.swift */,
+				F1B2AF272B5CBFCB003B557A /* ContentView.swift */,
+				F1B2AF292B5CC00B003B557A /* Location.swift */,
+				F1B2AF2B2B5CC042003B557A /* LocationsDataService.swift */,
+				F1B2AF2D2B5CC06F003B557A /* LocationsView.swift */,
+				F1B2AF2F2B5CC0A6003B557A /* LocationsPreviewView.swift */,
+				F1B2AF312B5CC0D6003B557A /* LocationListView.swift */,
+				F1B2AF332B5CC159003B557A /* LocationsViewModel.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -147,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				F19A898F2B588A5600CB4AB5 /* FoodAdvisorViewController.swift */,
+				F1B2AF372B5CDDC5003B557A /* FoodAdvisorHostingController.swift */,
+				F1B2AF392B5D3514003B557A /* FoodAdvisorView.swift */,
 			);
 			path = FoodAdvisor;
 			sourceTree = "<group>";
@@ -230,12 +260,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				F19A897A2B58811900CB4AB5 /* TabBarController.swift in Sources */,
+				F1B2AF2A2B5CC00B003B557A /* Location.swift in Sources */,
+				F1B2AF2E2B5CC06F003B557A /* LocationsView.swift in Sources */,
 				F19A89902B588A5600CB4AB5 /* FoodAdvisorViewController.swift in Sources */,
+				F1B2AF302B5CC0A6003B557A /* LocationsPreviewView.swift in Sources */,
+				F1B2AF3A2B5D3514003B557A /* FoodAdvisorView.swift in Sources */,
 				F19A898E2B58898A00CB4AB5 /* MapViewController.swift in Sources */,
+				F1B2AF322B5CC0D6003B557A /* LocationListView.swift in Sources */,
+				F1B2AF382B5CDDC5003B557A /* FoodAdvisorHostingController.swift in Sources */,
 				F19A898A2B5885BC00CB4AB5 /* HomePageViewController.swift in Sources */,
 				F19A89762B58811900CB4AB5 /* AppDelegate.swift in Sources */,
 				F19A89922B588B8300CB4AB5 /* ImpressionsViewController.swift in Sources */,
+				F1B2AF282B5CBFCB003B557A /* ContentView.swift in Sources */,
+				F1B2AF342B5CC159003B557A /* LocationsViewModel.swift in Sources */,
+				F1B2AF2C2B5CC042003B557A /* LocationsDataService.swift in Sources */,
 				F19A89782B58811900CB4AB5 /* SceneDelegate.swift in Sources */,
+				F1B2AF262B5CBE57003B557A /* Map.swift in Sources */,
 				F19A898C2B58880300CB4AB5 /* CitiesListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
