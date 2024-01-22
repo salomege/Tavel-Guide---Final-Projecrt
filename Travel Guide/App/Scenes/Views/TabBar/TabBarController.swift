@@ -21,7 +21,7 @@ class TabBarController: UITabBarController {
         UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
         
         tabBar.backgroundColor = .systemBackground
-        tabBar.tintColor = .orange
+        tabBar.tintColor = .green
         tabBar.unselectedItemTintColor = .systemGray2
     }
     
@@ -45,8 +45,8 @@ class TabBarController: UITabBarController {
         navController.tabBarItem.title = title
         navController.tabBarItem.image = image
         navController.navigationItem.title = "nav title"
-        navController.tabBarItem.setTitleTextAttributes([.foregroundColor: UIColor.red], for: .selected)
-        navController.viewControllers.first?.navigationItem.title = title 
+        navController.tabBarItem.setTitleTextAttributes([.foregroundColor: UIColor.black], for: .selected)
+        navController.viewControllers.first?.navigationItem.title = title
         return navController
     }
     
