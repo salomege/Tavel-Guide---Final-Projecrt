@@ -15,7 +15,7 @@ final class NetworkManager {
     
     // MARK: - Fetch Cities
     func fetchCities(completion: @escaping (Result<[City], Error>) -> Void) {
-        let urlStr = "https://mocki.io/v1/0f3f3e77-04b0-4339-9415-ce9ad67c4910"
+        let urlStr = "https://mocki.io/v1/489c5c0c-1930-4993-b583-5b9eb3474bcf"
         
         guard let url = URL(string: urlStr) else {
             completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
@@ -62,17 +62,25 @@ final class NetworkManager {
 
 // MARK: - Fetch City Details
 extension NetworkManager {
-    func fetchCityDetails(for id: Int) async throws -> CityDetails {
-        let urlStr = ""
-        
+    func fetchCityDetails(for detailsId: String) async throws -> CityDetails {
+        let urlStr = "https://mocki.io/v1/\(detailsId)"
+
+        print("NetworkManager: Constructing URL for city details: \(urlStr)") // Before URL Construction
+
         guard let url = URL(string: urlStr) else {
             throw NSError(domain: "com.yourdomain.app", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
         }
-        
+
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
+
+             print("NetworkManager: Received raw response data for city details: \(data)") // After API Call
+
             do {
                 let cityDetail = try JSONDecoder().decode(CityDetails.self, from: data)
+
+                print("NetworkManager: Parsed CityDetails: \(cityDetail)") // Before Data Passing
+
                 return cityDetail
             } catch {
                 throw NSError(domain: "com.yourdomain.app", code: -2, userInfo: [NSLocalizedDescriptionKey: "Decoding error: \(error.localizedDescription)"])

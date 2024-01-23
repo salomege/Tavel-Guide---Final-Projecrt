@@ -114,7 +114,7 @@ extension CitiesListViewController: CitiesListViewModelDelegate {
         print("error")
     }
     
-    func navigateToCityDetails(with cityId: Int) {
+    func navigateToCityDetails(with cityId: String) {
         let viewController = CityDetailsViewController(cityId: cityId)
         navigationController?.pushViewController(viewController, animated: true)
     }

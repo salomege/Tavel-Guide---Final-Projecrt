@@ -13,11 +13,13 @@ struct CitiesResponse: Decodable {
 
 struct City: Decodable {
     let id: Int
+    let detailsId: String
     let title: String
     let posterPath: String
 
     enum CodingKeys: String, CodingKey {
         case id
+        case detailsId
         case title
         case posterPath = "poster_path"
     }

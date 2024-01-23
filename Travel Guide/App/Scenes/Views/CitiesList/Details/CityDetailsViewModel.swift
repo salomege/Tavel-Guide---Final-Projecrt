@@ -19,11 +19,11 @@ protocol CityDetailsViewModel {
 }
 
 final class DefaultCityDetailsViewModel: CityDetailsViewModel {
-    private var cityId: Int
+    private var cityId: String
     
     weak var delegate: CityDetailsViewModelDelegate?
     
-    init(cityId: Int) {
+    init(cityId: String) {
         self.cityId = cityId
     }
     
