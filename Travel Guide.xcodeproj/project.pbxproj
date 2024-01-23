@@ -24,6 +24,12 @@
 		F19A89A72B5A056600CB4AB5 /* CityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A89A62B5A056600CB4AB5 /* CityDetailsViewController.swift */; };
 		F19A89A92B5A05B800CB4AB5 /* CityDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A89A82B5A05B800CB4AB5 /* CityDetailsViewModel.swift */; };
 		F19A89AB2B5A061000CB4AB5 /* CityDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A89AA2B5A061000CB4AB5 /* CityDetails.swift */; };
+		F1B2AF642B5F8659003B557A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF632B5F8659003B557A /* Location.swift */; };
+		F1B2AF662B5F868B003B557A /* LocationsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF652B5F868B003B557A /* LocationsDataService.swift */; };
+		F1B2AF682B5F86DE003B557A /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF672B5F86DE003B557A /* LocationsView.swift */; };
+		F1B2AF6A2B5F8874003B557A /* LocationPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF692B5F8874003B557A /* LocationPreviewView.swift */; };
+		F1B2AF6C2B5F88E2003B557A /* LocationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF6B2B5F88E2003B557A /* LocationListView.swift */; };
+		F1B2AF6E2B5F892B003B557A /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF6D2B5F892B003B557A /* LocationsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +52,12 @@
 		F19A89A62B5A056600CB4AB5 /* CityDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsViewController.swift; sourceTree = "<group>"; };
 		F19A89A82B5A05B800CB4AB5 /* CityDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsViewModel.swift; sourceTree = "<group>"; };
 		F19A89AA2B5A061000CB4AB5 /* CityDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetails.swift; sourceTree = "<group>"; };
+		F1B2AF632B5F8659003B557A /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		F1B2AF652B5F868B003B557A /* LocationsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsDataService.swift; sourceTree = "<group>"; };
+		F1B2AF672B5F86DE003B557A /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
+		F1B2AF692B5F8874003B557A /* LocationPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPreviewView.swift; sourceTree = "<group>"; };
+		F1B2AF6B2B5F88E2003B557A /* LocationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListView.swift; sourceTree = "<group>"; };
+		F1B2AF6D2B5F892B003B557A /* LocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +171,12 @@
 			isa = PBXGroup;
 			children = (
 				F19A898D2B58898A00CB4AB5 /* MapViewController.swift */,
+				F1B2AF632B5F8659003B557A /* Location.swift */,
+				F1B2AF652B5F868B003B557A /* LocationsDataService.swift */,
+				F1B2AF672B5F86DE003B557A /* LocationsView.swift */,
+				F1B2AF692B5F8874003B557A /* LocationPreviewView.swift */,
+				F1B2AF6B2B5F88E2003B557A /* LocationListView.swift */,
+				F1B2AF6D2B5F892B003B557A /* LocationsViewModel.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -259,18 +277,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				F19A89A42B5A04C100CB4AB5 /* NetworkManager.swift in Sources */,
+				F1B2AF6C2B5F88E2003B557A /* LocationListView.swift in Sources */,
 				F19A897A2B58811900CB4AB5 /* TabBarController.swift in Sources */,
+				F1B2AF642B5F8659003B557A /* Location.swift in Sources */,
+				F1B2AF662B5F868B003B557A /* LocationsDataService.swift in Sources */,
 				F19A89A22B59E01400CB4AB5 /* CitiesListViewModel.swift in Sources */,
 				F19A899E2B59DECD00CB4AB5 /* CityItemCollectionViewCell.swift in Sources */,
 				F19A89902B588A5600CB4AB5 /* FoodAdvisorViewController.swift in Sources */,
 				F19A898E2B58898A00CB4AB5 /* MapViewController.swift in Sources */,
 				F19A898A2B5885BC00CB4AB5 /* HomePageViewController.swift in Sources */,
+				F1B2AF6E2B5F892B003B557A /* LocationsViewModel.swift in Sources */,
+				F1B2AF6A2B5F8874003B557A /* LocationPreviewView.swift in Sources */,
 				F19A89762B58811900CB4AB5 /* AppDelegate.swift in Sources */,
 				F19A89A92B5A05B800CB4AB5 /* CityDetailsViewModel.swift in Sources */,
 				F19A89A02B59DF9100CB4AB5 /* City.swift in Sources */,
 				F19A89922B588B8300CB4AB5 /* ImpressionsViewController.swift in Sources */,
 				F19A89782B58811900CB4AB5 /* SceneDelegate.swift in Sources */,
 				F19A898C2B58880300CB4AB5 /* CitiesListViewController.swift in Sources */,
+				F1B2AF682B5F86DE003B557A /* LocationsView.swift in Sources */,
 				F19A89AB2B5A061000CB4AB5 /* CityDetails.swift in Sources */,
 				F19A89A72B5A056600CB4AB5 /* CityDetailsViewController.swift in Sources */,
 			);
