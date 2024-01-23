@@ -35,7 +35,8 @@ class TabBarController: UITabBarController {
         let map = createNavigation("Map", UIImage(systemName: "mappin.and.ellipse"), controller: MapViewController())
         let foodAdvisor = createNavigation("Food Advisor", UIImage(systemName: "fork.knife"), controller: FoodAdvisorViewController())
 
-       let impressions = createNavigation("Impressions", UIImage(systemName: "person.3.fill"), controller: UIHostingController(rootView: ImpressionsView()))
+        let impressionsViewModel = ImpressionsViewModel()
+                    let impressions = createNavigation("Impressions", UIImage(systemName: "person.3.fill"), controller: UIHostingController(rootView: ImpressionsView().environmentObject(impressionsViewModel)))
         
         setViewControllers([home, places, map, foodAdvisor, impressions], animated: true)
     }
