@@ -26,6 +26,8 @@
 		F1B2AF702B5F8D03003B557A /* ImpressionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF6F2B5F8D03003B557A /* ImpressionsView.swift */; };
 		F1B2AF722B5F8F06003B557A /* Impressions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF712B5F8F06003B557A /* Impressions.swift */; };
 		F1B2AF742B5F9099003B557A /* ImpressionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF732B5F9099003B557A /* ImpressionsViewModel.swift */; };
+		F1B2AF762B608732003B557A /* FoodAdvisorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF752B608732003B557A /* FoodAdvisorViewModel.swift */; };
+		F1B2AF782B608F49003B557A /* FoodAdvisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF772B608F49003B557A /* FoodAdvisor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		F1B2AF6F2B5F8D03003B557A /* ImpressionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpressionsView.swift; sourceTree = "<group>"; };
 		F1B2AF712B5F8F06003B557A /* Impressions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Impressions.swift; sourceTree = "<group>"; };
 		F1B2AF732B5F9099003B557A /* ImpressionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpressionsViewModel.swift; sourceTree = "<group>"; };
+		F1B2AF752B608732003B557A /* FoodAdvisorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAdvisorViewModel.swift; sourceTree = "<group>"; };
+		F1B2AF772B608F49003B557A /* FoodAdvisor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAdvisor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				F19A898F2B588A5600CB4AB5 /* FoodAdvisorViewController.swift */,
+				F1B2AF772B608F49003B557A /* FoodAdvisor.swift */,
+				F1B2AF752B608732003B557A /* FoodAdvisorViewModel.swift */,
 			);
 			path = FoodAdvisor;
 			sourceTree = "<group>";
@@ -265,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F19A89A42B5A04C100CB4AB5 /* NetworkManager.swift in Sources */,
+				F1B2AF762B608732003B557A /* FoodAdvisorViewModel.swift in Sources */,
 				F19A897A2B58811900CB4AB5 /* TabBarController.swift in Sources */,
 				F19A89A22B59E01400CB4AB5 /* CitiesListViewModel.swift in Sources */,
 				F19A899E2B59DECD00CB4AB5 /* CityItemCollectionViewCell.swift in Sources */,
@@ -274,6 +281,7 @@
 				F1B2AF702B5F8D03003B557A /* ImpressionsView.swift in Sources */,
 				F1B2AF722B5F8F06003B557A /* Impressions.swift in Sources */,
 				F19A89762B58811900CB4AB5 /* AppDelegate.swift in Sources */,
+				F1B2AF782B608F49003B557A /* FoodAdvisor.swift in Sources */,
 				F19A89A92B5A05B800CB4AB5 /* CityDetailsViewModel.swift in Sources */,
 				F1B2AF742B5F9099003B557A /* ImpressionsViewModel.swift in Sources */,
 				F19A89A02B59DF9100CB4AB5 /* City.swift in Sources */,
