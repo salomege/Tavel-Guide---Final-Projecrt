@@ -20,12 +20,19 @@ final class FoodAdvisorViewController: UIViewController, UITextFieldDelegate {
     private let submitButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Advise dish", for: .normal)
-        button.backgroundColor = .green
+        button.backgroundColor = UIColor(named: "AccentColor")
         button.layer.cornerRadius = 5
         button.setTitleColor(.white, for: .normal)
         
         return button
     }()
+    
+    private let resultImage: UIImageView = {
+           let imageView = UIImageView()
+           imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true // Ensures image doesn't overflow its bounds
+           return imageView
+       }()
     
     private let resultLabel: UILabel = {
         let label = UILabel()
@@ -33,14 +40,15 @@ final class FoodAdvisorViewController: UIViewController, UITextFieldDelegate {
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 20)
         label.textAlignment = .center
-        label.backgroundColor = .lightGray.withAlphaComponent(0.2)
+        label.backgroundColor = UIColor(red: 227/255.0, green: 249/255.0, blue: 238/255.0, alpha: 1.0)
+
         label.layer.cornerRadius = 6
         label.layer.masksToBounds = true
         return label
     }()
     
     private lazy var mainStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [regionTextField,  submitButton, resultLabel])
+        let stackView = UIStackView(arrangedSubviews: [regionTextField, submitButton, resultImage, resultLabel])
         stackView.distribution = .fill
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.alignment = .center
@@ -119,7 +127,11 @@ final class FoodAdvisorViewController: UIViewController, UITextFieldDelegate {
     private func updateUI() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self, let info = self.viewModel.result else { return }
-            
+
+            // Set the image using the image name (assuming the image is part of your app's assets)
+            let imageName = info.photo
+            self.resultImage.image = UIImage(named: imageName)
+
             // Construct the text to display
             let resultText = "Name: \(info.name)\nIngredients: \(info.ingredients)\nAbout: \(info.aboutInfo)"
             self.resultLabel.text = resultText

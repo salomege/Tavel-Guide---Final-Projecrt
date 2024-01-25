@@ -6,12 +6,14 @@
 //
 
 class Dish {
+    let photo: String
     let region: String
     let name: String
     let ingredients: String
     let aboutInfo: String
     
-    init(region: String, name: String, ingredients: String, aboutInfo: String) {
+    init(photo: String, region: String, name: String, ingredients: String, aboutInfo: String) {
+        self.photo = photo
         self.region = region
         self.name = name
         self.ingredients = ingredients
@@ -20,18 +22,21 @@ class Dish {
     
     static let dummyData = [
         Dish(
+            photo: "Khachapuri",
             region: "Imereti",
             name: "Khachapuri",
             ingredients: "cheese, flour",
             aboutInfo: "Imeruli Khachapuri is a traditional Georgian dish consisting of a round bread filled with a mixture of cheese, typically sulguni, and other ingredients. It is baked until the bread is golden and the cheese is melted, resulting in a delicious and savory pastry."
         ),
         Dish(
+            photo: "https://drive.google.com/uc?id=1nh_WccWk_aTAPcrrocTPZOhoNzOCUakG",
             region: "Kakheti",
             name: "Mtsvadi",
             ingredients: "Pork",
             aboutInfo: "Mtsvadi is a popular Georgian dish featuring skewers of marinated and grilled meat, commonly made with pork or beef. The meat is seasoned with spices and herbs, then cooked over an open flame, imparting a smoky flavor to the tender and flavorful kebabs."
         ),
         Dish(
+            photo: "https://drive.google.com/uc?id=1nh_WccWk_aTAPcrrocTPZOhoNzOCUakG",
             region: "Racha",
             name: "Lobiani",
             ingredients: "bean, flour",
@@ -43,6 +48,7 @@ class Dish {
 
 
 struct Info {
+    let photo: String
     let name: String
     let ingredients: String
     let aboutInfo: String

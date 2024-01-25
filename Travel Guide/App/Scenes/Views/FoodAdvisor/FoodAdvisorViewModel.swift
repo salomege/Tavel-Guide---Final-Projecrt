@@ -13,6 +13,7 @@ class FoodAdvisorViewModel {
 
     // Struct to organize the output data
     struct Info {
+        let photo: String
         let name: String
         let ingredients: String
         let aboutInfo: String
@@ -28,6 +29,7 @@ class FoodAdvisorViewModel {
             if let dish = matchingDish {
                 // Prepare the Info object to be displayed
                 let info = Info(
+                    photo: dish.photo,
                     name: dish.name,
                     ingredients: dish.ingredients,
                     aboutInfo: dish.aboutInfo
