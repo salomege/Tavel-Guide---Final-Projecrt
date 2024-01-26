@@ -32,7 +32,9 @@ class TabBarController: UITabBarController {
         
         let home = createNavigation("Home", UIImage(systemName: "house"), controller: HomePageViewController())
         let places = createNavigation("Top Places", UIImage(systemName: "mountain.2"), controller: CitiesListViewController())
-        let map = createNavigation("Map", UIImage(systemName: "mappin.and.ellipse"), controller: MapViewController())
+        
+        let locationsViewModel = LocationsViewModel()
+        let map = createNavigation("Map", UIImage(systemName: "mappin.and.ellipse"), controller: UIHostingController(rootView: LocationsView().environmentObject(locationsViewModel)))
         let foodAdvisor = createNavigation("Food Advisor", UIImage(systemName: "fork.knife"), controller: FoodAdvisorViewController())
 
         let impressionsViewModel = ImpressionsViewModel()
