@@ -10,7 +10,7 @@ import Foundation
 protocol CitiesListViewModelDelegate: AnyObject {
     func citiesFetched(_ cities: [City])
     func showError(_ error: Error)
-    func navigateToCityDetails(with cityId: Int)
+    func navigateToCityDetails(with cityId: String)
 }
 
 final class CitiesListViewModel {
@@ -23,7 +23,7 @@ final class CitiesListViewModel {
     }
     
     func didSelectCity(at indexPath: IndexPath) {
-        if let cityId = cities?[indexPath.row].id {
+        if let cityId = cities?[indexPath.row].detailsId {
             delegate?.navigateToCityDetails(with: cityId)
         }
     }

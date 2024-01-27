@@ -28,7 +28,7 @@ final class CityDetailsViewController: UIViewController {
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.textColor = .white
+        //label.textColor = .white
         return label
     }()
 
@@ -46,7 +46,7 @@ final class CityDetailsViewController: UIViewController {
     private var viewModel: CityDetailsViewModel
     
     // MARK: - Init
-    init(cityId: Int) {
+    init(cityId: String) {
         viewModel = DefaultCityDetailsViewModel(cityId: cityId)
         super.init(nibName: nil, bundle: nil)
         
