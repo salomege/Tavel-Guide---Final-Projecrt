@@ -28,12 +28,17 @@
 		F1B2AF722B5F8F06003B557A /* Impressions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF712B5F8F06003B557A /* Impressions.swift */; };
 		F1B2AF742B5F9099003B557A /* ImpressionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF732B5F9099003B557A /* ImpressionsViewModel.swift */; };
 
+
 		F1B2AF642B5F8659003B557A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF632B5F8659003B557A /* Location.swift */; };
 		F1B2AF662B5F868B003B557A /* LocationsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF652B5F868B003B557A /* LocationsDataService.swift */; };
 		F1B2AF682B5F86DE003B557A /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF672B5F86DE003B557A /* LocationsView.swift */; };
 		F1B2AF6A2B5F8874003B557A /* LocationPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF692B5F8874003B557A /* LocationPreviewView.swift */; };
 		F1B2AF6C2B5F88E2003B557A /* LocationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF6B2B5F88E2003B557A /* LocationListView.swift */; };
 		F1B2AF6E2B5F892B003B557A /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF6D2B5F892B003B557A /* LocationsViewModel.swift */; };
+
+
+		F1B2AF762B608732003B557A /* FoodAdvisorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF752B608732003B557A /* FoodAdvisorViewModel.swift */; };
+		F1B2AF782B608F49003B557A /* FoodAdvisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF772B608F49003B557A /* FoodAdvisor.swift */; };
 
 /* End PBXBuildFile section */
 
@@ -61,12 +66,17 @@
 		F1B2AF712B5F8F06003B557A /* Impressions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Impressions.swift; sourceTree = "<group>"; };
 		F1B2AF732B5F9099003B557A /* ImpressionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpressionsViewModel.swift; sourceTree = "<group>"; };
 
+
 		F1B2AF632B5F8659003B557A /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		F1B2AF652B5F868B003B557A /* LocationsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsDataService.swift; sourceTree = "<group>"; };
 		F1B2AF672B5F86DE003B557A /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
 		F1B2AF692B5F8874003B557A /* LocationPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPreviewView.swift; sourceTree = "<group>"; };
 		F1B2AF6B2B5F88E2003B557A /* LocationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListView.swift; sourceTree = "<group>"; };
 		F1B2AF6D2B5F892B003B557A /* LocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModel.swift; sourceTree = "<group>"; };
+
+
+		F1B2AF752B608732003B557A /* FoodAdvisorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAdvisorViewModel.swift; sourceTree = "<group>"; };
+		F1B2AF772B608F49003B557A /* FoodAdvisor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAdvisor.swift; sourceTree = "<group>"; };
 
 /* End PBXFileReference section */
 
@@ -195,6 +205,8 @@
 			isa = PBXGroup;
 			children = (
 				F19A898F2B588A5600CB4AB5 /* FoodAdvisorViewController.swift */,
+				F1B2AF772B608F49003B557A /* FoodAdvisor.swift */,
+				F1B2AF752B608732003B557A /* FoodAdvisorViewModel.swift */,
 			);
 			path = FoodAdvisor;
 			sourceTree = "<group>";
@@ -289,7 +301,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F19A89A42B5A04C100CB4AB5 /* NetworkManager.swift in Sources */,
+
 				F1B2AF6C2B5F88E2003B557A /* LocationListView.swift in Sources */,
+
+				F1B2AF762B608732003B557A /* FoodAdvisorViewModel.swift in Sources */,
+
 				F19A897A2B58811900CB4AB5 /* TabBarController.swift in Sources */,
 				F1B2AF642B5F8659003B557A /* Location.swift in Sources */,
 				F1B2AF662B5F868B003B557A /* LocationsDataService.swift in Sources */,
@@ -306,6 +322,7 @@
 				F1B2AF6A2B5F8874003B557A /* LocationPreviewView.swift in Sources */,
 
 				F19A89762B58811900CB4AB5 /* AppDelegate.swift in Sources */,
+				F1B2AF782B608F49003B557A /* FoodAdvisor.swift in Sources */,
 				F19A89A92B5A05B800CB4AB5 /* CityDetailsViewModel.swift in Sources */,
 				F1B2AF742B5F9099003B557A /* ImpressionsViewModel.swift in Sources */,
 				F19A89A02B59DF9100CB4AB5 /* City.swift in Sources */,
