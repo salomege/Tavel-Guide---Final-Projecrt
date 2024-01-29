@@ -10,11 +10,11 @@ import UIKit
 class HomePageViewController: UIViewController {
     
     private let welcomeImageView: UIImageView = {
-           let imageView = UIImageView(frame: UIScreen.main.bounds)
-           imageView.image = UIImage(named: "Welcome")
-           imageView.contentMode = .scaleAspectFill
-           return imageView
-       }()
+        let imageView = UIImageView(frame: UIScreen.main.bounds)
+        imageView.image = UIImage(named: "Welcome")
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
     
     private let welcomeText: UILabel = {
         let label = UILabel()
@@ -27,48 +27,48 @@ class HomePageViewController: UIViewController {
     }()
     
     private let subtitleLabel: UILabel = {
-            let label = UILabel()
-            label.text = "Explore, Discover, and Enjoy Your Journey"
-            label.font = UIFont.systemFont(ofSize: 18)
-            label.textColor = .white
-            label.textAlignment = .center
-            label.numberOfLines = 0
-
-            return label
-        }()
+        let label = UILabel()
+        label.text = "Explore, Discover, and Enjoy Your Journey"
+        label.font = UIFont.systemFont(ofSize: 18)
+        label.textColor = .white
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        
+        return label
+    }()
     
-   private let logoView: UIImageView = {
+    private let logoView: UIImageView = {
         let logoImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         logoImage.image = UIImage(named: "Logo_rounded-modified")
         logoImage.contentMode = .scaleAspectFit
-
+        
         return logoImage
     }()
     
-   private let logoBottomView: UIImageView = {
+    private let logoBottomView: UIImageView = {
         let logoImage = UIImageView()
         logoImage.image = UIImage(systemName: "arrowtriangle.down.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20))?
-               .withRenderingMode(.alwaysOriginal)
-               .withTintColor(.white)
+            .withRenderingMode(.alwaysOriginal)
+            .withTintColor(.white)
         return logoImage
     }()
     
-   private let sloganLabel: UILabel = {
-            let label = UILabel()
-            label.text = "Your Travel Guide"
-            label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
-            label.textColor = .white
-            label.textAlignment = .center
-            label.numberOfLines = 0
-
-            return label
-        }()
+    private let sloganLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Your Travel Guide"
+        label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        label.textColor = .white
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        
+        return label
+    }()
     
     lazy private var logoStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [logoView, logoBottomView])
         stackView.axis = .vertical
         stackView.alignment = .center
-        stackView.spacing = -5
+        stackView.spacing = -4
         return stackView
     }()
     
@@ -80,11 +80,11 @@ class HomePageViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-
+        
     }
     
     private func setup() {
@@ -93,8 +93,8 @@ class HomePageViewController: UIViewController {
         view.addSubview(mainStackView)
         
         NSLayoutConstraint.activate([
-         mainStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-         mainStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 100),
+            mainStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            mainStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 100),
             
             welcomeImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             welcomeImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -102,5 +102,5 @@ class HomePageViewController: UIViewController {
             welcomeImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
-
+    
 }
