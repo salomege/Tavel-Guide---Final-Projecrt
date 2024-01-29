@@ -9,22 +9,28 @@ import UIKit
 import SwiftUI
 
 class TabBarController: UITabBarController {
+    
+    
 
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        setupTabs()
-        let navBarAppearance = UINavigationBarAppearance()
-        navBarAppearance.configureWithTransparentBackground()
-        navBarAppearance.backgroundColor = .systemBackground
-        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.black]
-        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-        
-        tabBar.backgroundColor = .systemBackground
-        tabBar.tintColor = .green
-        tabBar.unselectedItemTintColor = .systemGray2
-    }
+            super.viewDidLoad()
+
+
+
+            setupTabs()
+
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithTransparentBackground()
+            navBarAppearance.backgroundColor = .systemBackground
+            navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+            UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+
+            tabBar.backgroundColor = .systemBackground
+        tabBar.tintColor = UIColor(named: "AccentColor")
+            tabBar.unselectedItemTintColor = .systemGray2
+        }
     
     // MARK: - Methods
     
