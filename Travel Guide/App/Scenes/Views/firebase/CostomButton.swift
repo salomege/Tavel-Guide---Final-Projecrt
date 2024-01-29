@@ -1,5 +1,5 @@
 //
-//  Button.swift
+//  CostomButton.swift
 //  Travel Guide
 //
 //  Created by salome on 29.01.24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Button: UIButton {
+final class CustomButton: UIButton {
     
     enum FontSize {
         case big

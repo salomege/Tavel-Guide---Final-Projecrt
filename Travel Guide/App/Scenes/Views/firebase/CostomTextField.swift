@@ -1,5 +1,5 @@
 //
-//  TextField.swift
+//  CostomTextField.swift
 //  Travel Guide
 //
 //  Created by salome on 29.01.24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TextField: UITextField {
+class CustomTextField: UITextField {
     
     enum CustomTextFieldType {
         case username
