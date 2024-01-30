@@ -17,9 +17,19 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
             super.viewDidLoad()
 
-
+        AuthService.shared.fetchUser { [weak self] user, error in
+            guard let self = self else { return }
+            if let error = error {
+                AlertManager.showFetchingUserError(on: self, with: error)
+                return
+            }
+            
+          
+        }
 
             setupTabs()
+        
+        
 
             let navBarAppearance = UINavigationBarAppearance()
             navBarAppearance.configureWithTransparentBackground()

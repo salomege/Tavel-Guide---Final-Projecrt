@@ -53,16 +53,18 @@ class LocationsViewModel: ObservableObject {
     }
     
     func nextButtonPressed() {
-        guard let currentIndex = locations.firstIndex(where: { $0 == mapLocation }) else {
-            return
+        DispatchQueue.main.async {
+            guard let currentIndex = self.locations.firstIndex(where: { $0 == self.mapLocation }) else {
+                return
+            }
+            let nextIndex = currentIndex + 1
+            guard self.locations.indices.contains(nextIndex) else {
+                guard let firstLocation = self.locations.first else { return }
+                self.showNextLocation(location: firstLocation)
+                return
+            }
+            let nextLocation = self.locations[nextIndex]
+            self.showNextLocation(location: nextLocation)
         }
-        let nextIndex = currentIndex + 1
-        guard locations.indices.contains(nextIndex) else {
-        guard let firstLocation = locations.first else { return }
-        showNextLocation(location: firstLocation)
-        return
-        }
-    let nextLocation = locations [nextIndex]
-    showNextLocation(location: nextLocation)
     }
 }
