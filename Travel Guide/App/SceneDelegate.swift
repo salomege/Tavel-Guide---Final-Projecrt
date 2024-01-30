@@ -26,16 +26,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     public func checkAuthentication() {
         if Auth.auth().currentUser == nil {
-            // User is not authenticated, show LoginController
-            let loginController = LoginController()
-            loginController.completionHandler = { [weak self] in
-                // Completion handler is called when sign-in is successful
-                self?.checkAuthentication()
-            }
-            self.goToController(with: loginController)
+            self.goToController(with: LoginController())
         } else {
-            // User is authenticated, show TabBarController
-            self.goToController(with: TabBarController())
+            //self.goToController(with: TabBarController())
+            self.goToController(with: LoginController())
+            
         }
     }
     

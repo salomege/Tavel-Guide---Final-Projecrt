@@ -8,8 +8,6 @@
 import UIKit
 
 class LoginController: UIViewController {
-    var completionHandler: (() -> Void)?
-
     
     // MARK: - UI Components
     private let headerView = HeaderView(title: "Sign In", subTitle: "Sign in to your account")
@@ -106,16 +104,11 @@ class LoginController: UIViewController {
                 return
             }
             
-            func signInSuccess() {
-                    // Example: Dismiss the login controller and call the completion handler
-                self.dismiss(animated: true) {
-                        self.completionHandler?()
-                    }
-                }
             
-//            if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
-//                sceneDelegate.checkAuthentication()
-//            }
+            
+            if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
+                sceneDelegate.checkAuthentication()
+            }
         }
     }
     
