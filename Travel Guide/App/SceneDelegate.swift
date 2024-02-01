@@ -14,8 +14,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         self.setupWindow(with: scene)
+        try? Auth.auth().signOut()
         self.checkAuthentication()
     }
+    
+    
     
     private func setupWindow(with scene: UIScene) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -28,8 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if Auth.auth().currentUser == nil {
             self.goToController(with: LoginController())
         } else {
-            //self.goToController(with: TabBarController())
-            self.goToController(with: LoginController())
+            self.goToController(with: TabBarController())
             
         }
     }

@@ -107,12 +107,7 @@ class RegisterController: UIViewController {
             AlertManager.showInvalidEmailAlert(on: self)
             return
         }
-        
-        // Password check
-//        if !Validator.isPasswordValid(for: registerUserRequest.password) {
-//            AlertManager.showInvalidPasswordAlert(on: self)
-//            return
-//        }
+    
         
         AuthService.shared.registerUser(with: registerUserRequest) { [weak self] wasRegistered, error in
             guard let self = self else { return }
@@ -138,28 +133,4 @@ class RegisterController: UIViewController {
     
 }
 
-//extension RegisterController: UITextViewDelegate {
-//    
-//    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-//        
-//        if URL.scheme == "terms" {
-//            self.showWebViewerController(with: "https://policies.google.com/terms?hl=en")
-//        } else if URL.scheme == "privacy" {
-//            self.showWebViewerController(with: "https://policies.google.com/privacy?hl=en")
-//        }
-//        
-//        return true
-//    }
-//    
-//    private func showWebViewerController(with urlString: String) {
-//        let vc = WebViewerController(with: urlString)
-//        let nav = UINavigationController(rootViewController: vc)
-//        self.present(nav, animated: true, completion: nil)
-//    }
-    
-//    func textViewDidChangeSelection(_ textView: UITextView) {
-//        textView.delegate = nil
-//        textView.selectedTextRange = nil
-//        textView.delegate = self
-//    }
-//}
+
