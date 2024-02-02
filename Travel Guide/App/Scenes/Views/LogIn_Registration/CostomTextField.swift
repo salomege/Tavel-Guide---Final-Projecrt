@@ -13,6 +13,7 @@ class CustomTextField: UITextField {
         case username
         case email
         case password
+        case text
     }
     
     private let authFieldType: CustomTextFieldType
@@ -32,6 +33,8 @@ class CustomTextField: UITextField {
         self.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: self.frame.size.height))
         
         switch fieldType {
+        case .text:
+            self.placeholder = "Enter Region"
         case .username:
             self.placeholder = "Username"
         case .email:

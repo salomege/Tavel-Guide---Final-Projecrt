@@ -29,10 +29,10 @@ class Dish {
             aboutInfo: "Imeruli Khachapuri is a traditional Georgian dish consisting of a round bread filled with a mixture of cheese, typically sulguni, and other ingredients. It is baked until the bread is golden and the cheese is melted, resulting in a delicious and savory pastry."
         ),
         Dish(
-            photo: "https://drive.google.com/uc?id=1nh_WccWk_aTAPcrrocTPZOhoNzOCUakG",
+            photo: "Mtsvadi",
             region: "Kakheti",
             name: "Mtsvadi",
-            ingredients: "Pork",
+            ingredients: "Pork / beef",
             aboutInfo: "Mtsvadi is a popular Georgian dish featuring skewers of marinated and grilled meat, commonly made with pork or beef. The meat is seasoned with spices and herbs, then cooked over an open flame, imparting a smoky flavor to the tender and flavorful kebabs."
         ),
         Dish(

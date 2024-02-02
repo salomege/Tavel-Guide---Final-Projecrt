@@ -9,49 +9,48 @@ import UIKit
 
 final class FoodAdvisorViewController: UIViewController, UITextFieldDelegate {
     
-    private let regionTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Enter Region"
-        textField.borderStyle = .roundedRect
-        textField.font = UIFont.systemFont(ofSize: 16)
-        return textField
+    private let headerImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "drawing-georgian-food")
+       // imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
     
-    private let submitButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Advise dish", for: .normal)
-        button.backgroundColor = UIColor(named: "AccentColor")
-        button.layer.cornerRadius = 5
-        button.setTitleColor(.white, for: .normal)
-        
-        return button
-    }()
+    private let regionTextField = CustomTextField(fieldType: .text)
+    private let submitButton = CustomButton(title: "Advise dish", hasBackground: true, fontSize: .big)
+
     
     private let resultImage: UIImageView = {
            let imageView = UIImageView()
-           imageView.contentMode = .scaleAspectFit
-        imageView.clipsToBounds = true // Ensures image doesn't overflow its bounds
+        imageView.layer.cornerRadius = 10
+        imageView.clipsToBounds = true
            return imageView
        }()
     
     private let resultLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 20)
-        label.textAlignment = .center
-        label.backgroundColor = UIColor(red: 227/255.0, green: 249/255.0, blue: 238/255.0, alpha: 1.0)
-
-        label.layer.cornerRadius = 6
+        label.textAlignment = .left
         label.layer.masksToBounds = true
         return label
     }()
     
     private lazy var mainStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [regionTextField, submitButton, resultImage, resultLabel])
+        let stackView = UIStackView(arrangedSubviews: [regionTextField, submitButton])
         stackView.distribution = .fill
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.alignment = .center
+        stackView.axis = .vertical
+        stackView.spacing = 16
+        return stackView
+    }()
+    
+    private lazy var resultStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [resultImage, resultLabel])
+        stackView.distribution = .fill
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.alignment = .leading
         stackView.axis = .vertical
         stackView.spacing = 16
         return stackView
@@ -63,7 +62,6 @@ final class FoodAdvisorViewController: UIViewController, UITextFieldDelegate {
     // MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupBackground()
         addSubviews()
         setupConstraints()
@@ -73,22 +71,45 @@ final class FoodAdvisorViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: - Private Methods
+    
     private func setupBackground() {
         view.backgroundColor = .white
     }
+   
     private func addSubviews() {
+        view.addSubview(headerImage)
         view.addSubview(mainStackView)
-        
+        view.addSubview(resultStackView)
     }
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            mainStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
-            mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            headerImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            headerImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            headerImage.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
         
-        regionTextField.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        submitButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        NSLayoutConstraint.activate([
+            mainStackView.topAnchor.constraint(equalTo: headerImage.bottomAnchor, constant: 20),
+            mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            resultStackView.topAnchor.constraint(equalTo: mainStackView.bottomAnchor, constant: 20),
+            resultStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            resultStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            
+//                resultLabel.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor, constant: 16),
+//                resultLabel.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor, constant: -16)
+            
+        ])
+        
+            headerImage.widthAnchor.constraint(equalToConstant: 350).isActive = true
+            headerImage.heightAnchor.constraint(equalToConstant: 150).isActive = true
+            regionTextField.widthAnchor.constraint(equalToConstant: 300).isActive = true
+            regionTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
+            submitButton.widthAnchor.constraint(equalToConstant: 300).isActive = true
+            submitButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        resultImage.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        resultImage.heightAnchor.constraint(equalToConstant: 110).isActive = true
         
     }
     
@@ -128,13 +149,29 @@ final class FoodAdvisorViewController: UIViewController, UITextFieldDelegate {
         DispatchQueue.main.async { [weak self] in
             guard let self = self, let info = self.viewModel.result else { return }
 
-            // Set the image using the image name (assuming the image is part of your app's assets)
             let imageName = info.photo
             self.resultImage.image = UIImage(named: imageName)
 
-            // Construct the text to display
-            let resultText = "Name: \(info.name)\nIngredients: \(info.ingredients)\nAbout: \(info.aboutInfo)"
-            self.resultLabel.text = resultText
+            let nameAttributes: [NSAttributedString.Key: Any] = [
+                .foregroundColor: UIColor.darkGray, // Adjust color as needed
+                .font: UIFont.boldSystemFont(ofSize: 18)
+            ]
+
+            let ingredientsAttributes: [NSAttributedString.Key: Any] = [
+                .foregroundColor: UIColor.black,
+                .font: UIFont.systemFont(ofSize: 14)
+            ]
+
+            let aboutInfoAttributes: [NSAttributedString.Key: Any] = [
+                .foregroundColor: UIColor.gray,
+                .font: UIFont.systemFont(ofSize: 14)
+            ]
+
+            let attributedText = NSMutableAttributedString(string: "\(info.name)\n", attributes: nameAttributes)
+            attributedText.append(NSAttributedString(string: "Ingredients: \(info.ingredients)\n", attributes: ingredientsAttributes))
+            attributedText.append(NSAttributedString(string: "\(info.aboutInfo)", attributes: aboutInfoAttributes))
+
+            self.resultLabel.attributedText = attributedText
         }
     }
     
