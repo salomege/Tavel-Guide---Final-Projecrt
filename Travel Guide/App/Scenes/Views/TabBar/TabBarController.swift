@@ -54,11 +54,14 @@ class TabBarController: UITabBarController {
         let foodAdvisor = createNavigation("Food Advisor", UIImage(systemName: "fork.knife"), controller: FoodAdvisorViewController())
 
         let impressionsViewModel = ImpressionsViewModel()
-                    let impressions = createNavigation("Impressions", UIImage(systemName: "person.3.fill"), controller: UIHostingController(rootView: ImpressionsView().environmentObject(impressionsViewModel)))
+                    let review = createNavigation("Add Review", UIImage(systemName: "person.3.fill"), controller: UIHostingController(rootView: ImpressionsView().environmentObject(impressionsViewModel)))
+        
+        let currencyViewModel = CurrencyViewModel()
+                    let currency = createNavigation("Currency", UIImage(systemName: "larisign.arrow.circlepath"), controller: UIHostingController(rootView: CurrencyView().environmentObject(currencyViewModel)))
         
         
         
-        setViewControllers([/*home,*/ places, map, foodAdvisor, impressions], animated: true)
+        setViewControllers([/*home,*/ places, map, foodAdvisor, currency, review], animated: true)
     }
     
     
