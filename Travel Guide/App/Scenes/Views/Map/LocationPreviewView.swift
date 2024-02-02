@@ -20,7 +20,7 @@ struct LocationPreviewView: View {
             titleSection
         }
         VStack(spacing: 8) {
-            learnMoreButton
+            //learnMoreButton
             nextButton
         }
     }
@@ -66,16 +66,16 @@ extension LocationPreviewView {
         }
         .frame(maxWidth: .infinity)
 }
-    private var learnMoreButton: some View {
-        Button {
-            
-        } label: {
-            Text("Learn more")
-                .font(.headline)
-                .frame(width:124, height: 34)
-        }
-        .buttonStyle(.borderedProminent)
-    }
+//    private var learnMoreButton: some View {
+//        Button {
+//            
+//        } label: {
+//            Text("Learn more")
+//                .font(.headline)
+//                .frame(width:124, height: 34)
+//        }
+//        .buttonStyle(.borderedProminent)
+//    }
     
     private var nextButton: some View {
         Button {

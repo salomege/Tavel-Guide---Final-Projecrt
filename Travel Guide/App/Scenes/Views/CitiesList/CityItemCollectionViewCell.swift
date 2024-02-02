@@ -19,12 +19,12 @@ final class CityItemCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    private let favoriteButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.tintColor = .green
-        button.setImage(UIImage(systemName: "heart"), for: .normal)
-        return button
-    }()
+//    private let favoriteButton: UIButton = {
+//        let button = UIButton(type: .system)
+//        button.tintColor = .green
+//        button.setImage(UIImage(systemName: "heart"), for: .normal)
+//        return button
+//    }()
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -63,7 +63,7 @@ final class CityItemCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         addSubview()
         setupConstraints()
-        setupButtonAction()
+        //setupButtonAction()
     }
     
     required init?(coder: NSCoder) {
@@ -77,7 +77,7 @@ final class CityItemCollectionViewCell: UICollectionViewCell {
         cityImageView.image = nil
         genreLabel.text = nil
         titleLabel.text = nil
-        favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+       // favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
     }
 
     // MARK: - Private Methods
@@ -107,23 +107,23 @@ final class CityItemCollectionViewCell: UICollectionViewCell {
             titleGenreStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8)
         ])
         
-        let topRightButton = createTopButton()
-        topButtonStackView.addArrangedSubview(favoriteButton)
-        topButtonStackView.addArrangedSubview(topRightButton)
+//        let topRightButton = createTopButton()
+//        topButtonStackView.addArrangedSubview(favoriteButton)
+//        topButtonStackView.addArrangedSubview(topRightButton)
     }
 
-    private func setupButtonAction() {
-        favoriteButton.addAction(
-            UIAction(
-                title: "",
-                handler: { [weak self] _ in
-                    let isFavorite = self?.favoriteButton.currentImage == UIImage(systemName: "heart.fill")
-                    self?.favoriteButton.setImage(UIImage(systemName: isFavorite ? "heart" : "heart.fill"), for: .normal)
-                }
-            ),
-            for: .touchUpInside
-        )
-    }
+//    private func setupButtonAction() {
+//        favoriteButton.addAction(
+//            UIAction(
+//                title: "",
+//                handler: { [weak self] _ in
+//                    let isFavorite = self?.favoriteButton.currentImage == UIImage(systemName: "heart.fill")
+//                    self?.favoriteButton.setImage(UIImage(systemName: isFavorite ? "heart" : "heart.fill"), for: .normal)
+//                }
+//            ),
+//            for: .touchUpInside
+//        )
+//    }
     
     // MARK: - Helper Methods
     private func createTopButton() -> UIButton {
