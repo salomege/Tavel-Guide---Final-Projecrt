@@ -40,7 +40,6 @@
 		F1B2AFA62B67B045003B557A /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AFA52B67B045003B557A /* LoginController.swift */; };
 		F1B2AFA82B67B0EC003B557A /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AFA72B67B0EC003B557A /* RegistrationController.swift */; };
 		F1B2AFAA2B685181003B557A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F1B2AFA92B685181003B557A /* GoogleService-Info.plist */; };
-		F1B2AFE62B686855003B557A /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F1B2AFE52B686855003B557A /* FirebaseAnalyticsSwift */; };
 		F1B2AFE82B686855003B557A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F1B2AFE72B686855003B557A /* FirebaseAuth */; };
 		F1B2AFEB2B6873D7003B557A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AFEA2B6873D7003B557A /* AuthService.swift */; };
 		F1B2AFED2B6874BB003B557A /* RegisterUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AFEC2B6874BB003B557A /* RegisterUserRequest.swift */; };
@@ -101,7 +100,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1B2AFE62B686855003B557A /* FirebaseAnalyticsSwift in Frameworks */,
 				F1B2AFE82B686855003B557A /* FirebaseAuth in Frameworks */,
 				F1B2AFF82B68EB47003B557A /* FirebaseAnalytics in Frameworks */,
 				F1B2AFF62B68E5C0003B557A /* FirebaseFirestoreSwift in Frameworks */,
@@ -303,7 +301,6 @@
 			);
 			name = "Travel Guide";
 			packageProductDependencies = (
-				F1B2AFE52B686855003B557A /* FirebaseAnalyticsSwift */,
 				F1B2AFE72B686855003B557A /* FirebaseAuth */,
 				F1B2AFF52B68E5C0003B557A /* FirebaseFirestoreSwift */,
 				F1B2AFF72B68EB47003B557A /* FirebaseAnalytics */,
@@ -627,11 +624,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F1B2AFE52B686855003B557A /* FirebaseAnalyticsSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F1B2AFE22B686854003B557A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsSwift;
-		};
 		F1B2AFE72B686855003B557A /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F1B2AFE22B686854003B557A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
