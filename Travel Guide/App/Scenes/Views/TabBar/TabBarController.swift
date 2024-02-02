@@ -46,7 +46,7 @@ class TabBarController: UITabBarController {
     
     private func setupTabs() {
         
-        let home = createNavigation("Home", UIImage(systemName: "house"), controller: HomePageViewController())
+//        let home = createNavigation("Home", UIImage(systemName: "house"), controller: HomePageViewController())
         let places = createNavigation("Top Places", UIImage(systemName: "mountain.2"), controller: CitiesListViewController())
         
         let locationsViewModel = LocationsViewModel()
@@ -56,7 +56,9 @@ class TabBarController: UITabBarController {
         let impressionsViewModel = ImpressionsViewModel()
                     let impressions = createNavigation("Impressions", UIImage(systemName: "person.3.fill"), controller: UIHostingController(rootView: ImpressionsView().environmentObject(impressionsViewModel)))
         
-        setViewControllers([home, places, map, foodAdvisor, impressions], animated: true)
+        
+        
+        setViewControllers([/*home,*/ places, map, foodAdvisor, impressions], animated: true)
     }
     
     
