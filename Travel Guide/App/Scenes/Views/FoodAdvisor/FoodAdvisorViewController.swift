@@ -12,21 +12,21 @@ final class FoodAdvisorViewController: UIViewController, UITextFieldDelegate {
     private let headerImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "drawing-georgian-food")
-       // imageView.contentMode = .scaleAspectFit
+        // imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     private let regionTextField = CustomTextField(fieldType: .text)
     private let submitButton = CustomButton(title: "Advise dish", hasBackground: true, fontSize: .big)
-
+    
     
     private let resultImage: UIImageView = {
-           let imageView = UIImageView()
+        let imageView = UIImageView()
         imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
-           return imageView
-       }()
+        return imageView
+    }()
     
     private let resultLabel: UILabel = {
         let label = UILabel()
@@ -75,7 +75,7 @@ final class FoodAdvisorViewController: UIViewController, UITextFieldDelegate {
     private func setupBackground() {
         view.backgroundColor = .white
     }
-   
+    
     private func addSubviews() {
         view.addSubview(headerImage)
         view.addSubview(mainStackView)
@@ -96,18 +96,14 @@ final class FoodAdvisorViewController: UIViewController, UITextFieldDelegate {
             resultStackView.topAnchor.constraint(equalTo: mainStackView.bottomAnchor, constant: 20),
             resultStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             resultStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            
-//                resultLabel.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor, constant: 16),
-//                resultLabel.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor, constant: -16)
-            
         ])
         
-            headerImage.widthAnchor.constraint(equalToConstant: 350).isActive = true
-            headerImage.heightAnchor.constraint(equalToConstant: 150).isActive = true
-            regionTextField.widthAnchor.constraint(equalToConstant: 300).isActive = true
-            regionTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
-            submitButton.widthAnchor.constraint(equalToConstant: 300).isActive = true
-            submitButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        headerImage.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        headerImage.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        regionTextField.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        regionTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        submitButton.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        submitButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         resultImage.widthAnchor.constraint(equalToConstant: 200).isActive = true
         resultImage.heightAnchor.constraint(equalToConstant: 110).isActive = true
         
@@ -133,7 +129,7 @@ final class FoodAdvisorViewController: UIViewController, UITextFieldDelegate {
         
         self.viewModel.fetchData(regionName: region) { [weak self] result in
             guard let self = self else { return }
-
+            
             switch result {
             case .success(_): // No need to use dishData here
                 print("Data fetched successfully")
@@ -148,29 +144,29 @@ final class FoodAdvisorViewController: UIViewController, UITextFieldDelegate {
     private func updateUI() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self, let info = self.viewModel.result else { return }
-
+            
             let imageName = info.photo
             self.resultImage.image = UIImage(named: imageName)
-
+            
             let nameAttributes: [NSAttributedString.Key: Any] = [
-                .foregroundColor: UIColor.darkGray, // Adjust color as needed
+                .foregroundColor: UIColor.darkGray,
                 .font: UIFont.boldSystemFont(ofSize: 18)
             ]
-
+            
             let ingredientsAttributes: [NSAttributedString.Key: Any] = [
                 .foregroundColor: UIColor.black,
                 .font: UIFont.systemFont(ofSize: 14)
             ]
-
+            
             let aboutInfoAttributes: [NSAttributedString.Key: Any] = [
                 .foregroundColor: UIColor.gray,
                 .font: UIFont.systemFont(ofSize: 14)
             ]
-
+            
             let attributedText = NSMutableAttributedString(string: "\(info.name)\n", attributes: nameAttributes)
             attributedText.append(NSAttributedString(string: "Ingredients: \(info.ingredients)\n", attributes: ingredientsAttributes))
             attributedText.append(NSAttributedString(string: "\(info.aboutInfo)", attributes: aboutInfoAttributes))
-
+            
             self.resultLabel.attributedText = attributedText
         }
     }
