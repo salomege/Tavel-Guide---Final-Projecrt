@@ -14,8 +14,7 @@ final class CitiesListViewController: UIViewController {
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.minimumInteritemSpacing = 16
-        layout.minimumLineSpacing = 16
+        layout.minimumLineSpacing = -6
         layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -38,7 +37,7 @@ final class CitiesListViewController: UIViewController {
     
     // MARK: - Private Methods
     private func setup() {
-        view.backgroundColor = UIColor(red: 170 / 255.0, green: 199 / 255.0, blue: 159 / 255.0, alpha: 1)
+        view.backgroundColor = UIColor(named: "BackColor")
         setupCollectionView()
     }
  

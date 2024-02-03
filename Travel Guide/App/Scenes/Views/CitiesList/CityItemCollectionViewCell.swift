@@ -29,7 +29,7 @@ final class CityItemCollectionViewCell: UICollectionViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.textColor = .white
+        //label.textColor = .white
         label.numberOfLines = 2
         label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         return label
@@ -38,7 +38,7 @@ final class CityItemCollectionViewCell: UICollectionViewCell {
     private let genreLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.textColor = .white
+        //label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         return label
     }()

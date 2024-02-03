@@ -8,140 +8,106 @@
 import UIKit
 
 final class CityDetailsViewController: UIViewController {
-    
+
     // MARK: - UI Components
-    private let mainStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
-    }()
-    
+
     private let cityImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.heightAnchor.constraint(equalToConstant: 210).isActive = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
+
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
+
+    private let scrollViewContainer: UIStackView = {
+        let view = UIStackView()
+        view.axis = .vertical
+        view.spacing = 10
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        //label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
-
-    private let bottomSectionStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.backgroundColor = .white
-        stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
-        return stackView
-    }()
-   
-    
     private var viewModel: CityDetailsViewModel
-    
+
     // MARK: - Init
     init(cityId: String) {
         viewModel = DefaultCityDetailsViewModel(cityId: cityId)
         super.init(nibName: nil, bundle: nil)
-        
+
         viewModel.delegate = self
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - ViewLifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         viewModel.viewDidLoad()
     }
-    
+
     // MARK: - Private Methods
     private func setup() {
-        view.backgroundColor = .white
-        setupMainStackView()
-        setupCityRatingInformation()
-        setupDescriptionLabel()
-        setupBottomSectionStackView()
-       
-    }
-    
-    private func setupMainStackView() {
-        view.addSubview(mainStackView)
-        mainStackView.addArrangedSubview(cityImageView)
-        
-        NSLayoutConstraint.activate([
-            mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
-        ])
-    }
-    
-    private func setupCityRatingInformation() {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 4
-        stackView.alignment = .center
-        stackView.backgroundColor = UIColor(red: 99/255.0, green: 115/255.0, blue: 148/255.0, alpha: 0.1)
-        stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
-        
+        view.backgroundColor = UIColor(named: "BackColor")
 
-        
-        mainStackView.addArrangedSubview(stackView)
+        setupCityImageView()
+        setupScrollView()
+        setupScrollViewContainer()
+        setupDescriptionLabel()
     }
-    
-    private func setupDescriptionLabel() {
-        let stackView = UIStackView()
-        stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom: 12, right: 16)
-        
-        stackView.addArrangedSubview(descriptionLabel)
-        mainStackView.addArrangedSubview(stackView)
-    }
-        
-    private func createInfoStackView(_ title: String, detail: String) {
-        let stackView = UIStackView()
-        stackView.spacing = 16
-        stackView.alignment = .leading
-        stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 12, right: 16)
-        
-        let titleLabel = UILabel()
-        titleLabel.text = title
-        titleLabel.textColor = .white
-        titleLabel.widthAnchor.constraint(equalToConstant: 86).isActive = true
-        
-        let detailLabel = UILabel()
-        detailLabel.text = detail
-        detailLabel.textColor = .white
-        detailLabel.numberOfLines = 0
-        
-        stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(detailLabel)
-        
-        mainStackView.addArrangedSubview(stackView)
-    }
-    
-    private func setupBottomSectionStackView() {
-        view.addSubview(bottomSectionStackView)
-    
+
+    private func setupCityImageView() {
+        view.addSubview(cityImageView)
         NSLayoutConstraint.activate([
-            bottomSectionStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            bottomSectionStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            bottomSectionStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            bottomSectionStackView.heightAnchor.constraint(equalToConstant: 114)
+            cityImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            cityImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            cityImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
         ])
     }
-    
+
+    private func setupScrollView() {
+        view.addSubview(scrollView)
+        NSLayoutConstraint.activate([
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            scrollView.topAnchor.constraint(equalTo: cityImageView.bottomAnchor, constant: 30),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+
+        scrollView.addSubview(scrollViewContainer)
+
+        NSLayoutConstraint.activate([
+            scrollViewContainer.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            scrollViewContainer.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            scrollViewContainer.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            scrollViewContainer.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -10),
+            scrollViewContainer.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+        ])
+    }
+
+    private func setupScrollViewContainer() {
+        // Add your stack view arranged subviews here
+    }
+
+    private func setupDescriptionLabel() {
+        scrollViewContainer.addArrangedSubview(descriptionLabel)
+    }
 }
 
 // MARK: - CityDetailsViewModelDelegate
@@ -150,17 +116,17 @@ extension CityDetailsViewController: CityDetailsViewModelDelegate {
         Task {
             navigationItem.title = city.title
             descriptionLabel.text = city.overview
-            
         }
     }
-    
+
     func showError(_ error: Error) {
         print("Error")
     }
-    
+
     func cityDetailsImageFetched(_ image: UIImage) {
         Task {
             cityImageView.image = image
         }
     }
 }
+
