@@ -40,6 +40,13 @@ final class CityDetailsViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    private let topPlaces: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
 
     private var viewModel: CityDetailsViewModel
 
@@ -70,6 +77,7 @@ final class CityDetailsViewController: UIViewController {
         setupScrollView()
         setupScrollViewContainer()
         setupDescriptionLabel()
+        setupTopPlaces()
     }
 
     private func setupCityImageView() {
@@ -108,6 +116,9 @@ final class CityDetailsViewController: UIViewController {
     private func setupDescriptionLabel() {
         scrollViewContainer.addArrangedSubview(descriptionLabel)
     }
+    private func setupTopPlaces() {
+        scrollViewContainer.addArrangedSubview(topPlaces)
+    }
 }
 
 // MARK: - CityDetailsViewModelDelegate
@@ -116,6 +127,9 @@ extension CityDetailsViewController: CityDetailsViewModelDelegate {
         Task {
             navigationItem.title = city.title
             descriptionLabel.text = city.overview
+//          let topPlacesText = city.topPlaces.map { $0.name }.joined(separator: ", ")
+//                       topPlaces.text = "Top Places: \(topPlacesText)"
+
         }
     }
 

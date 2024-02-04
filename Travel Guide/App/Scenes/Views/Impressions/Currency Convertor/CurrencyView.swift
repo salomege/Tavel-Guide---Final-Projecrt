@@ -31,7 +31,12 @@ struct CurrencyView: View {
 
             Button("Convert") {
                 convertAmount()
+                   
             }
+            .foregroundColor(.black) // Optional: Set text color
+            .frame(width: 200, height: 50) // Set width and height of the button
+            .background(Color.accentColor) // Set background color of the button
+            .cornerRadius(10)
 
             if let convertedAmount = viewModel.convertedAmount {
                 Text("Converted Amount: \(convertedAmount, specifier: "%.2f") \(selectedCurrency)")

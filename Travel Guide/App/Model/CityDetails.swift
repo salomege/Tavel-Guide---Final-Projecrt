@@ -12,11 +12,17 @@ struct CityDetails: Decodable {
     let posterPath: String
     let title: String
     let overview: String
-    
+    //let topPlaces: [TopPlace]
+
     enum CodingKeys: String, CodingKey {
         case id
         case overview
         case posterPath = "poster_path"
         case title
+        //case topPlaces = "top_places"
     }
+
+//    struct TopPlace: Decodable {
+//        let name: String
+//    }
 }
