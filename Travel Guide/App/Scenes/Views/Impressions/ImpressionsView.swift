@@ -38,12 +38,10 @@ struct ImpressionsView: View {
                 DatePicker("Enter Date", selection: $date, displayedComponents: [.date])
                 Divider()
                 TextField("Enter Title", text: $title)
-                Divider()
                 TextEditor(text: $impression)
                            .frame(height: 50)
                            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1))
                            .padding(.horizontal)
-                Divider()
                 Button(action: saveButtonPressed) {
                     Text("Add Review")
                         .foregroundColor(.white)
