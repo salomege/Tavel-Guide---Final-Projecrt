@@ -75,7 +75,6 @@ final class CityDetailsViewController: UIViewController {
 
         setupCityImageView()
         setupScrollView()
-        setupScrollViewContainer()
         setupDescriptionLabel()
         setupTopPlaces()
     }
@@ -109,9 +108,6 @@ final class CityDetailsViewController: UIViewController {
         ])
     }
 
-    private func setupScrollViewContainer() {
-        // Add your stack view arranged subviews here
-    }
 
     private func setupDescriptionLabel() {
         scrollViewContainer.addArrangedSubview(descriptionLabel)

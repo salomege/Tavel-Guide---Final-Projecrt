@@ -38,9 +38,9 @@ class HeaderView: UIView {
     // MARK: - LifeCycle
     init(title: String, subTitle: String) {
         super.init(frame: .zero)
-        self.titleLabel.text = title
-        self.subTitleLabel.text = subTitle
-        self.setupUI()
+        titleLabel.text = title
+        subTitleLabel.text = subTitle
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
@@ -50,9 +50,9 @@ class HeaderView: UIView {
     
     // MARK: - UI Setup
     private func setupUI() {
-        self.addSubview(logoImageView)
-        self.addSubview(titleLabel)
-        self.addSubview(subTitleLabel)
+        addSubview(logoImageView)
+        addSubview(titleLabel)
+        addSubview(subTitleLabel)
         
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -60,18 +60,18 @@ class HeaderView: UIView {
 
 
         NSLayoutConstraint.activate([
-            self.logoImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
-            self.logoImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            self.logoImageView.widthAnchor.constraint(equalToConstant: 90),
-            self.logoImageView.heightAnchor.constraint(equalTo: logoImageView.widthAnchor),
+            logoImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
+            logoImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            logoImageView.widthAnchor.constraint(equalToConstant: 90),
+            logoImageView.heightAnchor.constraint(equalTo: logoImageView.widthAnchor),
             
-            self.titleLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 19),
-            self.titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            titleLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 19),
+            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             
-            self.subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12),
-            self.subTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.subTitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12),
+            subTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            subTitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
         ])
     }
 }

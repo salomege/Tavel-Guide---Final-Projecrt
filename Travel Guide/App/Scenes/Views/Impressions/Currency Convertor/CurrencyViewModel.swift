@@ -35,7 +35,6 @@ class CurrencyViewModel: ObservableObject {
                 let decoder = JSONDecoder()
                 let result = try decoder.decode(Currency.self, from: data)
                 
-                // Update @Published property on the main thread
                 DispatchQueue.main.async {
                     self.currency = result
                 }
@@ -48,7 +47,6 @@ class CurrencyViewModel: ObservableObject {
     }
     func convertAmount(amount: Double, to currencyCode: String, completion: @escaping () -> Void) {
         guard let currency = currency else {
-            // Handle missing currency information
             return
         }
         
@@ -60,7 +58,6 @@ class CurrencyViewModel: ObservableObject {
         case "USD":
             convertedAmount = amount * currency.rates.USD
         default:
-            // Handle unsupported currency code
             return
         }
         

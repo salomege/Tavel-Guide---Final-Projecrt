@@ -14,7 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         self.setupWindow(with: scene)
-        try? Auth.auth().signOut()
+        //try? Auth.auth().signOut()
         self.checkAuthentication()
     }
     
@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     public func checkAuthentication() {
         if Auth.auth().currentUser == nil {
-            self.goToController(with: LoginController())
+            self.goToController(with: HomePageViewController())
         } else {
             self.goToController(with: TabBarController())
             

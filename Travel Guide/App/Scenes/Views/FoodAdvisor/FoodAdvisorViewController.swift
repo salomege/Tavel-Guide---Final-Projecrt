@@ -131,9 +131,9 @@ final class FoodAdvisorViewController: UIViewController, UITextFieldDelegate {
             guard let self = self else { return }
             
             switch result {
-            case .success(_): // No need to use dishData here
+            case .success(_):
                 print("Data fetched successfully")
-                self.updateUI() // Call updateUI directly
+                self.updateUI() 
             case .failure(let error):
                 print("Error: \(error)")
             }

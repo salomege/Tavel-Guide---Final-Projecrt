@@ -23,14 +23,10 @@ class TabBarController: UITabBarController {
                 AlertManager.showFetchingUserError(on: self, with: error)
                 return
             }
-            
-          
         }
 
             setupTabs()
         
-        
-
             let navBarAppearance = UINavigationBarAppearance()
             navBarAppearance.configureWithTransparentBackground()
             navBarAppearance.backgroundColor = .systemBackground
@@ -46,7 +42,6 @@ class TabBarController: UITabBarController {
     
     private func setupTabs() {
         
-//        let home = createNavigation("Home", UIImage(systemName: "house"), controller: HomePageViewController())
         let places = createNavigation("Top Places", UIImage(systemName: "mountain.2"), controller: CitiesListViewController())
         
         let locationsViewModel = LocationsViewModel()
@@ -61,7 +56,7 @@ class TabBarController: UITabBarController {
         
         
         
-        setViewControllers([/*home,*/ places, map, foodAdvisor, currency, review], animated: true)
+        setViewControllers([places, map, foodAdvisor, currency, review], animated: true)
     }
     
     

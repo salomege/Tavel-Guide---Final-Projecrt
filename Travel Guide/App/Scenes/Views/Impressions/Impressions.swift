@@ -15,6 +15,16 @@ CaseIterable, Codable {
     case place3 = "Imereti"
     case place4 = "Racha"
     case place5 = "Kartli"
+    case place6 = "Svaneti"
+    case place7 = "Tusheti"
+    case place8 = "Kevsureti"
+    case place9 = "Kakheti"
+    case place10 = "Guria"
+    case place11 = "Samegrelo"
+    case place12 = "Mtskheta"
+    case place13 = "Samtskhe-Javakheti"
+
+
     
     static var allPlaces: [Place] {
         return Place.allCases

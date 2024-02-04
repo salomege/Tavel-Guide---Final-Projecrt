@@ -72,8 +72,10 @@ class HomePageViewController: UIViewController {
         return stackView
     }()
     
+    private let submitButton = CustomButton(title: "Join Us", hasBackground: true, fontSize: .big)
+    
     lazy private var mainStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [welcomeText, subtitleLabel,logoStackView, sloganLabel])
+        let stackView = UIStackView(arrangedSubviews: [welcomeText, subtitleLabel,logoStackView, sloganLabel, submitButton])
         stackView.axis = .vertical
         stackView.alignment = .center
         stackView.spacing = 10
@@ -84,6 +86,9 @@ class HomePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        
+       submitButton.addTarget(self, action: #selector(didTapJoinUs), for: .touchUpInside)
+        
         
     }
     
@@ -100,7 +105,14 @@ class HomePageViewController: UIViewController {
             welcomeImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             welcomeImageView.topAnchor.constraint(equalTo: view.topAnchor),
             welcomeImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            submitButton.heightAnchor.constraint(equalToConstant: 45),
+            submitButton.widthAnchor.constraint(equalToConstant: 200)
         ])
     }
     
+    @objc private func didTapJoinUs() {
+        let rc = RegisterController()
+        self.navigationController?.pushViewController(rc, animated: true)
+    }
 }

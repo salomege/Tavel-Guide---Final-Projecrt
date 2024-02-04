@@ -14,40 +14,65 @@ struct CurrencyView: View {
 
     var body: some View {
         VStack {
-            TextField("Enter amount in GEL", text: $amount)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .keyboardType(.decimalPad)
-
-            Picker("Select Currency", selection: $selectedCurrency) {
-                Text("USD").tag("USD")
-                Text("EUR").tag("EUR")
-                Text("GBP").tag("GBP")
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            .padding()
-            .onChange(of: selectedCurrency) { _ in
-                convertAmount()
-            }
-
-            Button("Convert") {
-                convertAmount()
-                   
-            }
-            .foregroundColor(.black) // Optional: Set text color
-            .frame(width: 200, height: 50) // Set width and height of the button
-            .background(Color.accentColor) // Set background color of the button
-            .cornerRadius(10)
-
-            if let convertedAmount = viewModel.convertedAmount {
-                Text("Converted Amount: \(convertedAmount, specifier: "%.2f") \(selectedCurrency)")
-            }
+            inputSection
+            pickerSection
+            convertButtonSection
+            resultSection
         }
         .padding()
         .onAppear {
             viewModel.fetchData {
             }
         }
+        .padding(.top, 200)
+
+        Spacer()
+        Image("currency-back")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: UIScreen.main.bounds.width, height: 200)
     }
+
+    private var inputSection: some View {
+        TextField("Enter amount in GEL", text: $amount)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .keyboardType(.decimalPad)
+    }
+
+    private var pickerSection: some View {
+        Picker("Select Currency", selection: $selectedCurrency) {
+            Text("USD").tag("USD")
+            Text("EUR").tag("EUR")
+            Text("GBP").tag("GBP")
+        }
+        .pickerStyle(SegmentedPickerStyle())
+        .padding()
+        .onChange(of: selectedCurrency) { _ in
+            convertAmount()
+        }
+    }
+
+    private var convertButtonSection: some View {
+        Button("Convert") {
+            convertAmount()
+        }
+        .foregroundColor(.black)
+        .frame(width: 200, height: 50)
+        .background(Color.accentColor)
+        .cornerRadius(10)
+    }
+
+    private var resultSection: some View {
+        Group {
+            if let convertedAmount = viewModel.convertedAmount {
+                Text("\(convertedAmount, specifier: "%.2f") \(selectedCurrency)")
+                    .padding(.top, 30)
+                    .font(.title)
+            }
+        }
+   
+    }
+    
 
     private func convertAmount() {
         guard let amount = Double(amount) else {
@@ -55,9 +80,10 @@ struct CurrencyView: View {
         }
 
         viewModel.convertAmount(amount: amount, to: selectedCurrency) {
-            // Handle completion, update UI, etc.
+            
         }
     }
+       
 }
 
 struct ContentView_Previews: PreviewProvider {
