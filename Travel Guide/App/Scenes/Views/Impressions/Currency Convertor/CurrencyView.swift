@@ -56,7 +56,8 @@ struct CurrencyView: View {
         Button("Convert") {
             convertAmount()
         }
-        .foregroundColor(.black)
+        .foregroundColor(.white)
+        .fontWeight(.bold)
         .frame(width: 200, height: 50)
         .background(Color.accentColor)
         .cornerRadius(10)

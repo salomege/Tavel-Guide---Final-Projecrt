@@ -63,12 +63,25 @@ class TabBarController: UITabBarController {
     private func createNavigation(_ title: String, _ image: UIImage?, controller: UIViewController) -> UINavigationController {
         
         let navController = UINavigationController(rootViewController: controller)
+
+      
         navController.tabBarItem.title = title
         navController.tabBarItem.image = image
-        navController.navigationItem.title = "nav title"
         navController.tabBarItem.setTitleTextAttributes([.foregroundColor: UIColor.black], for: .selected)
-        navController.viewControllers.first?.navigationItem.title = title
+
+        
+        let logoutButton = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logoutButtonTapped))
+        controller.navigationItem.rightBarButtonItem = logoutButton
+    
+        controller.title = title
+
         return navController
+    }
+
+ 
+    @objc private func logoutButtonTapped() {
+       
+        
     }
     
 }
