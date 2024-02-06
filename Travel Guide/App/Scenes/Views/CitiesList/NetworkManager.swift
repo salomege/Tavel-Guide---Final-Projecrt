@@ -16,7 +16,6 @@ final class NetworkManager {
     // MARK: - Fetch Cities
     func fetchCities(completion: @escaping (Result<[City], Error>) -> Void) {
         let urlStr = "https://mocki.io/v1/fd615d0c-52c7-4cde-8653-e0d27a4f4586"
-        
         guard let url = URL(string: urlStr) else {
             completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
             return
@@ -48,14 +47,18 @@ final class NetworkManager {
             completion(nil)
             return
         }
+        DispatchQueue.main.async {
+                   completion(nil) // Pass nil to indicate the start of loading
+               }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil, let image = UIImage(data: data) else {
                 completion(nil)
                 return
             }
-            
-            completion(image)
+            DispatchQueue.main.async {
+                completion(image)
+            }
         }.resume()
     }
 }

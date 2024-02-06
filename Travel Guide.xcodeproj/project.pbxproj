@@ -51,6 +51,8 @@
 		F1B2B08F2B6CF1D5003B557A /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2B08E2B6CF1D5003B557A /* CurrencyView.swift */; };
 		F1B2B0912B6CF218003B557A /* CurrencyConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2B0902B6CF218003B557A /* CurrencyConvertor.swift */; };
 		F1B2B0932B6CF262003B557A /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2B0922B6CF262003B557A /* CurrencyViewModel.swift */; };
+		F1B2B0952B7090DF003B557A /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F1B2B0942B7090DF003B557A /* FirebaseDatabase */; };
+		F1B2B0972B7188C0003B557A /* LoaderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2B0962B7188C0003B557A /* LoaderHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +99,7 @@
 		F1B2B08E2B6CF1D5003B557A /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
 		F1B2B0902B6CF218003B557A /* CurrencyConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConvertor.swift; sourceTree = "<group>"; };
 		F1B2B0922B6CF262003B557A /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
+		F1B2B0962B7188C0003B557A /* LoaderHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,7 @@
 			files = (
 				F1B2AFE82B686855003B557A /* FirebaseAuth in Frameworks */,
 				F1B2AFF82B68EB47003B557A /* FirebaseAnalytics in Frameworks */,
+				F1B2B0952B7090DF003B557A /* FirebaseDatabase in Frameworks */,
 				F1B2AFF62B68E5C0003B557A /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				F19A89792B58811900CB4AB5 /* TabBarController.swift */,
+				F1B2B0962B7188C0003B557A /* LoaderHelper.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -318,6 +323,7 @@
 				F1B2AFE72B686855003B557A /* FirebaseAuth */,
 				F1B2AFF52B68E5C0003B557A /* FirebaseFirestoreSwift */,
 				F1B2AFF72B68EB47003B557A /* FirebaseAnalytics */,
+				F1B2B0942B7090DF003B557A /* FirebaseDatabase */,
 			);
 			productName = "Travel Guide";
 			productReference = F19A89722B58811900CB4AB5 /* Travel Guide.app */;
@@ -386,6 +392,7 @@
 				F1B2AF762B608732003B557A /* FoodAdvisorViewModel.swift in Sources */,
 				F19A897A2B58811900CB4AB5 /* TabBarController.swift in Sources */,
 				F1B2AF642B5F8659003B557A /* Location.swift in Sources */,
+				F1B2B0972B7188C0003B557A /* LoaderHelper.swift in Sources */,
 				F1B2AF662B5F868B003B557A /* LocationsDataService.swift in Sources */,
 				F19A89A22B59E01400CB4AB5 /* CitiesListViewModel.swift in Sources */,
 				F1B2AFA42B67A500003B557A /* CostomButton.swift in Sources */,
@@ -654,6 +661,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F1B2AFE22B686854003B557A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
+		};
+		F1B2B0942B7090DF003B557A /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F1B2AFE22B686854003B557A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

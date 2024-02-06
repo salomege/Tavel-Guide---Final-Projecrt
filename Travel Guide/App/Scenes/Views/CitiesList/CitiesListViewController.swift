@@ -71,7 +71,7 @@ extension CitiesListViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CityItemCell", for: indexPath) as? CityItemCollectionViewCell else {
             return UICollectionViewCell()
         }
-        
+
         cell.configure(with: cities[indexPath.row])
         return cell
     }
@@ -117,4 +117,5 @@ extension CitiesListViewController: CitiesListViewModelDelegate {
         let viewController = CityDetailsViewController(cityId: cityId)
         navigationController?.pushViewController(viewController, animated: true)
     }
+   
 }
