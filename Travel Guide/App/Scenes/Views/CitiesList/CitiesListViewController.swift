@@ -9,6 +9,7 @@ import UIKit
 
 final class CitiesListViewController: UIViewController {
     
+    
     // MARK: - Properties
     
     private let collectionView: UICollectionView = {
@@ -27,12 +28,17 @@ final class CitiesListViewController: UIViewController {
     
     private let viewModel = CitiesListViewModel()
     
+    private var loader: UIAlertController?
+
+    
     // MARK: - ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         setupViewModelDelegate()
         viewModel.viewDidLoad()
+        loadDataWithLoader()
+
     }
     
     // MARK: - Private Methods
@@ -66,7 +72,7 @@ extension CitiesListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         cities.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CityItemCell", for: indexPath) as? CityItemCollectionViewCell else {
             return UICollectionViewCell()
@@ -76,6 +82,7 @@ extension CitiesListViewController: UICollectionViewDataSource {
         return cell
     }
 }
+
 
 // MARK: - CollectionView FlowLayoutDelegate
 extension CitiesListViewController: UICollectionViewDelegateFlowLayout {
@@ -103,19 +110,38 @@ extension CitiesListViewController: UICollectionViewDelegate {
 // MARK: - CitiesListViewModelDelegate
 extension CitiesListViewController: CitiesListViewModelDelegate {
     func citiesFetched(_ cities: [City]) {
+        // Dismiss loader once data is fetched
+        if let loader = self.loader {
+            LoaderHelper.stopLoader(loader: loader)
+        }
+
         self.cities = cities
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
+        
     }
-    
+
     func showError(_ error: Error) {
-        print("error")
+        // Dismiss loader if there's an error
+        if let loader = self.loader {
+            LoaderHelper.stopLoader(loader: loader)
+        }
+        print("Error: \(error.localizedDescription)")
     }
+
     
     func navigateToCityDetails(with cityId: String) {
         let viewController = CityDetailsViewController(cityId: cityId)
         navigationController?.pushViewController(viewController, animated: true)
     }
+    
+    private func loadDataWithLoader() {
+            // Show loader while data is being fetched
+            loader = LoaderHelper.loader(in: self.view)
+
+            // Fetch data
+            viewModel.fetchCities()
+        }
    
 }
