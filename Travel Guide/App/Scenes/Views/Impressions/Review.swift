@@ -8,7 +8,7 @@
 import Foundation
 
 enum Place: String,
-CaseIterable, Codable {
+            CaseIterable, Codable {
     
     case place1 = "Tbilisi"
     case place2 = "Adjara"
@@ -23,33 +23,41 @@ CaseIterable, Codable {
     case place11 = "Samegrelo"
     case place12 = "Mtskheta"
     case place13 = "Samtskhe-Javakheti"
-
-
+    
+    
     
     static var allPlaces: [Place] {
         return Place.allCases
-    }}
+    }
+}
 
-struct Impressions: Identifiable, Codable {
+struct Review: Identifiable, Codable {
     let id: String
     let place: Place
-    let title:String
-    let impression: String
+    let reviewTitle:String
+    let reviewText: String
     let date: Date
     
-    init(id: String = UUID().uuidString, place: Place, title: String, impression:String, date: Date) {
+    init(
+        id: String = UUID().uuidString,
+         place: Place,
+         title: String,
+         review:String,
+         date: Date
+    ) {
         self.id = id
         self.place = place
-        self.title = title
-        self.impression = impression
+        self.reviewTitle = title
+        self.reviewText = review
         self.date = date
     }
     
-    
-    func updateCompletion() -> Impressions {
-        return Impressions(id: id, place: place, title: title, impression: impression, date: date)
+    func updateCompletion() -> Review {
+        return Review(id: id, 
+                      place: place,
+                      title: reviewTitle,
+                      review: reviewText,
+                      date: date)
     }
-    
-    
 }
 

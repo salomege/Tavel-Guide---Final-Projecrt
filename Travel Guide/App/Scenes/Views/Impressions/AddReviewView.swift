@@ -1,5 +1,5 @@
 //
-//  ImpressionsView.swift
+//  AddReviewView.swift
 //  Travel Guide
 //
 //  Created by salome on 22.01.24.
@@ -7,13 +7,17 @@
 
 import SwiftUI
 
-struct ImpressionsView: View {
-    @Environment(\.presentationMode) var presentationMode
-    @State private var title: String = ""
-    @State private var impression: String = ""
-    @State private var selectedPlace: Place = .place1
+struct AddReviewView: View {
+    @Environment(\.presentationMode) var
+        presentationMode
+    @EnvironmentObject var listViewModel: 
+        AddReviewViewModel
+
+    @State private var reviewTitle: String = ""
+    @State private var reviewText: String = ""
+    @State private var selectedPlace: Place =
+        .place1
     @State private var date = Date()
-    @EnvironmentObject var listViewModel: ImpressionsViewModel
     @State private var showAlert = false
     
     
@@ -29,20 +33,28 @@ struct ImpressionsView: View {
     
    private var formSection: some View {
         Form {
-            Picker("Select City / Region", selection: $selectedPlace) {
-                ForEach(Place.allCases, id: \.self) { place in
-                    Text(place.rawValue).tag(place)
+            Picker("Select City / Region", 
+                   selection: $selectedPlace) {
+                   ForEach(Place.allCases, id:
+                        \.self) { place in
+                        Text(place.rawValue)
+                           .tag(place)
                 }
             }
             VStack {
-                DatePicker("Enter Date", selection: $date, displayedComponents: [.date])
+                DatePicker("Enter Date", 
+                           selection: $date,
+                           displayedComponents:
+                            [.date])
                 Divider()
-                TextField("Enter Title", text: $title)
-                TextEditor(text: $impression)
-                           .frame(height: 50)
-                           .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1))
-                           .padding(.horizontal)
-                Button(action: saveButtonPressed) {
+                TextField("Enter Title", text: 
+                            $reviewTitle)
+                TextEditor(text: $reviewText)
+                        .frame(height: 50)
+                        .overlay(RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color.gray, lineWidth: 1))
+                        .padding(.horizontal)
+                Button(action: addReview) {
                     Text("Add Review")
                         .foregroundColor(.white)
                         .fontWeight(.bold)
@@ -52,28 +64,26 @@ struct ImpressionsView: View {
                 }
                 .padding()
             }
-          
         }
         .padding(16)
         .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-        // .background(Color(.white))
         .cornerRadius(5)
         .disableAutocorrection(true)
     }
     
     private var listSection: some View {
         List {
-            ForEach(listViewModel.items) { item in
+            ForEach(listViewModel.reviews) { item in
                 VStack(alignment: .leading) {
                     Text("\(formattedDate(from: item.date))")
                     Text("\(selectedPlace.rawValue)")
                         .font(.title3)
-                    Text("\(item.title)")
+                    Text("\(item.reviewTitle)")
                         .font(.title3)
-                    Text("\(item.impression)")
+                    Text("\(item.reviewText)")
                 }
             }
-            .onDelete(perform: listViewModel.deleteItem)
+            .onDelete(perform: listViewModel.deleteReview)
         }
         .id(UUID())
         .listStyle(PlainListStyle())
@@ -86,15 +96,15 @@ struct ImpressionsView: View {
         }
     }
     
-    func saveButtonPressed() {
-        if title.isEmpty || impression.isEmpty {
+    func addReview() {
+        if reviewTitle.isEmpty || reviewText.isEmpty {
             showAlert = true
         } else {
-            listViewModel.addItem(title: title, impression: impression, date: date, place: selectedPlace)
+            listViewModel.addReview(title: reviewTitle, reviewText: reviewText, date: date, place: selectedPlace)
             presentationMode.wrappedValue.dismiss()
             
-            title = ""
-            impression = ""
+            reviewTitle = ""
+            reviewText = ""
         }
     }
     
@@ -108,8 +118,8 @@ struct ImpressionsView: View {
 struct ImpressionsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ImpressionsView()
-                .environmentObject(ImpressionsViewModel())
+            AddReviewView()
+                .environmentObject(    AddReviewViewModel())
         }
     }
 }

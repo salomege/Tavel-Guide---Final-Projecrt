@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F15D7E3A2B73198D0017866D /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15D7E392B73198D0017866D /* LaunchScreenViewController.swift */; };
+		F14845E62B757BC400728A4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14845E52B757BC400728A4F /* LaunchScreen.storyboard */; };
 		F19A89762B58811900CB4AB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A89752B58811900CB4AB5 /* AppDelegate.swift */; };
 		F19A89782B58811900CB4AB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A89772B58811900CB4AB5 /* SceneDelegate.swift */; };
 		F19A897A2B58811900CB4AB5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A89792B58811900CB4AB5 /* TabBarController.swift */; };
 		F19A897F2B58811A00CB4AB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F19A897E2B58811A00CB4AB5 /* Assets.xcassets */; };
-		F19A89822B58811A00CB4AB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F19A89802B58811A00CB4AB5 /* LaunchScreen.storyboard */; };
 		F19A898A2B5885BC00CB4AB5 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A89892B5885BB00CB4AB5 /* HomePageViewController.swift */; };
 		F19A898C2B58880300CB4AB5 /* CitiesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A898B2B58880300CB4AB5 /* CitiesListViewController.swift */; };
 		F19A89902B588A5600CB4AB5 /* FoodAdvisorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A898F2B588A5600CB4AB5 /* FoodAdvisorViewController.swift */; };
@@ -29,9 +28,9 @@
 		F1B2AF6A2B5F8874003B557A /* LocationPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF692B5F8874003B557A /* LocationPreviewView.swift */; };
 		F1B2AF6C2B5F88E2003B557A /* LocationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF6B2B5F88E2003B557A /* LocationListView.swift */; };
 		F1B2AF6E2B5F892B003B557A /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF6D2B5F892B003B557A /* LocationsViewModel.swift */; };
-		F1B2AF702B5F8D03003B557A /* ImpressionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF6F2B5F8D03003B557A /* ImpressionsView.swift */; };
-		F1B2AF722B5F8F06003B557A /* Impressions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF712B5F8F06003B557A /* Impressions.swift */; };
-		F1B2AF742B5F9099003B557A /* ImpressionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF732B5F9099003B557A /* ImpressionsViewModel.swift */; };
+		F1B2AF702B5F8D03003B557A /* AddReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF6F2B5F8D03003B557A /* AddReviewView.swift */; };
+		F1B2AF722B5F8F06003B557A /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF712B5F8F06003B557A /* Review.swift */; };
+		F1B2AF742B5F9099003B557A /* AddReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF732B5F9099003B557A /* AddReviewViewModel.swift */; };
 		F1B2AF762B608732003B557A /* FoodAdvisorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF752B608732003B557A /* FoodAdvisorViewModel.swift */; };
 		F1B2AF782B608F49003B557A /* FoodAdvisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF772B608F49003B557A /* FoodAdvisor.swift */; };
 		F1B2AFA02B67A3C3003B557A /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2AF9F2B67A3C2003B557A /* HeaderView.swift */; };
@@ -57,13 +56,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F15D7E392B73198D0017866D /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		F14845E52B757BC400728A4F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F19A89722B58811900CB4AB5 /* Travel Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F19A89752B58811900CB4AB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F19A89772B58811900CB4AB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F19A89792B58811900CB4AB5 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F19A897E2B58811A00CB4AB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F19A89812B58811A00CB4AB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F19A89832B58811A00CB4AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F19A89892B5885BB00CB4AB5 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		F19A898B2B58880300CB4AB5 /* CitiesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListViewController.swift; sourceTree = "<group>"; };
@@ -81,9 +79,9 @@
 		F1B2AF692B5F8874003B557A /* LocationPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPreviewView.swift; sourceTree = "<group>"; };
 		F1B2AF6B2B5F88E2003B557A /* LocationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListView.swift; sourceTree = "<group>"; };
 		F1B2AF6D2B5F892B003B557A /* LocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModel.swift; sourceTree = "<group>"; };
-		F1B2AF6F2B5F8D03003B557A /* ImpressionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpressionsView.swift; sourceTree = "<group>"; };
-		F1B2AF712B5F8F06003B557A /* Impressions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Impressions.swift; sourceTree = "<group>"; };
-		F1B2AF732B5F9099003B557A /* ImpressionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpressionsViewModel.swift; sourceTree = "<group>"; };
+		F1B2AF6F2B5F8D03003B557A /* AddReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewView.swift; sourceTree = "<group>"; };
+		F1B2AF712B5F8F06003B557A /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		F1B2AF732B5F9099003B557A /* AddReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewViewModel.swift; sourceTree = "<group>"; };
 		F1B2AF752B608732003B557A /* FoodAdvisorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAdvisorViewModel.swift; sourceTree = "<group>"; };
 		F1B2AF772B608F49003B557A /* FoodAdvisor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAdvisor.swift; sourceTree = "<group>"; };
 		F1B2AF9F2B67A3C2003B557A /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -141,7 +139,7 @@
 			children = (
 				F19A89932B588D6700CB4AB5 /* App */,
 				F19A897E2B58811A00CB4AB5 /* Assets.xcassets */,
-				F19A89802B58811A00CB4AB5 /* LaunchScreen.storyboard */,
+				F14845E52B757BC400728A4F /* LaunchScreen.storyboard */,
 				F1B2AFA92B685181003B557A /* GoogleService-Info.plist */,
 				F19A89832B58811A00CB4AB5 /* Info.plist */,
 			);
@@ -197,7 +195,6 @@
 			isa = PBXGroup;
 			children = (
 				F19A89792B58811900CB4AB5 /* TabBarController.swift */,
-				F15D7E392B73198D0017866D /* LaunchScreenViewController.swift */,
 				F1B2B0962B7188C0003B557A /* LoaderHelper.swift */,
 			);
 			path = TabBar;
@@ -249,9 +246,9 @@
 		F19A899C2B588EA600CB4AB5 /* Impressions */ = {
 			isa = PBXGroup;
 			children = (
-				F1B2AF712B5F8F06003B557A /* Impressions.swift */,
-				F1B2AF6F2B5F8D03003B557A /* ImpressionsView.swift */,
-				F1B2AF732B5F9099003B557A /* ImpressionsViewModel.swift */,
+				F1B2AF712B5F8F06003B557A /* Review.swift */,
+				F1B2AF6F2B5F8D03003B557A /* AddReviewView.swift */,
+				F1B2AF732B5F9099003B557A /* AddReviewViewModel.swift */,
 				F1B2B08D2B6CF1B2003B557A /* Currency Convertor */,
 			);
 			path = Impressions;
@@ -373,7 +370,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F19A89822B58811A00CB4AB5 /* LaunchScreen.storyboard in Resources */,
+				F14845E62B757BC400728A4F /* LaunchScreen.storyboard in Resources */,
 				F19A897F2B58811A00CB4AB5 /* Assets.xcassets in Resources */,
 				F1B2AFAA2B685181003B557A /* GoogleService-Info.plist in Resources */,
 			);
@@ -403,9 +400,8 @@
 				F19A89902B588A5600CB4AB5 /* FoodAdvisorViewController.swift in Sources */,
 				F19A898A2B5885BC00CB4AB5 /* HomePageViewController.swift in Sources */,
 				F1B2AFA62B67B045003B557A /* LoginController.swift in Sources */,
-				F1B2AF702B5F8D03003B557A /* ImpressionsView.swift in Sources */,
-				F15D7E3A2B73198D0017866D /* LaunchScreenViewController.swift in Sources */,
-				F1B2AF722B5F8F06003B557A /* Impressions.swift in Sources */,
+				F1B2AF702B5F8D03003B557A /* AddReviewView.swift in Sources */,
+				F1B2AF722B5F8F06003B557A /* Review.swift in Sources */,
 				F1B2AFF12B68911B003B557A /* AlertManager.swift in Sources */,
 				F1B2AF6E2B5F892B003B557A /* LocationsViewModel.swift in Sources */,
 				F1B2AF6A2B5F8874003B557A /* LocationPreviewView.swift in Sources */,
@@ -413,7 +409,7 @@
 				F19A89762B58811900CB4AB5 /* AppDelegate.swift in Sources */,
 				F1B2AF782B608F49003B557A /* FoodAdvisor.swift in Sources */,
 				F19A89A92B5A05B800CB4AB5 /* CityDetailsViewModel.swift in Sources */,
-				F1B2AF742B5F9099003B557A /* ImpressionsViewModel.swift in Sources */,
+				F1B2AF742B5F9099003B557A /* AddReviewViewModel.swift in Sources */,
 				F19A89A02B59DF9100CB4AB5 /* City.swift in Sources */,
 				F19A89782B58811900CB4AB5 /* SceneDelegate.swift in Sources */,
 				F19A898C2B58880300CB4AB5 /* CitiesListViewController.swift in Sources */,
@@ -430,17 +426,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		F19A89802B58811A00CB4AB5 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F19A89812B58811A00CB4AB5 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F19A89842B58811A00CB4AB5 /* Debug */ = {

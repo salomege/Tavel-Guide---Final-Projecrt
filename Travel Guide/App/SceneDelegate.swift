@@ -13,9 +13,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     
-    
-    
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, 
+           options connectionOptions: UIScene.ConnectionOptions) {
            self.setupWindow(with: scene)
            self.checkAuthentication()
        }
@@ -32,19 +31,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
             goToController(with: HomePageViewController())
         } else {
-            // User is authenticated, check for existing user document
             let user = Auth.auth().currentUser!
             let docRef = Firestore.firestore().collection("users").document(user.uid)
             docRef.getDocument { [weak self] (document, error) in
                 guard let self = self else { return }
                 if error != nil {
-                    // Handle error
                 } else {
                     if let document = document, document.exists {
-                        // Existing user, go to TabBarController
                         self.goToController(with: TabBarController())
                     } else {
-                        // New user, go to homePageViewController
                         self.goToController(with: HomePageViewController())
                     }
                 }

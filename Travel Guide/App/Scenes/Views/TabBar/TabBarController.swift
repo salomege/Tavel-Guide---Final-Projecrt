@@ -11,7 +11,6 @@ import SwiftUI
 class TabBarController: UITabBarController {
     
     
-    
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
@@ -42,17 +41,42 @@ class TabBarController: UITabBarController {
     
     private func setupTabs() {
         
-        let places = createNavigation("Top Places", UIImage(systemName: "mountain.2"), controller: CitiesListViewController())
+        let places = createNavigation(
+            "Top Places",
+            UIImage(systemName: "mountain.2"),
+            controller: CitiesListViewController()
+        )
         
         let locationsViewModel = LocationsViewModel()
-        let map = createNavigation("Map", UIImage(systemName: "mappin.and.ellipse"), controller: UIHostingController(rootView: LocationsView().environmentObject(locationsViewModel)))
-        let foodAdvisor = createNavigation("Food Advisor", UIImage(systemName: "fork.knife"), controller: FoodAdvisorViewController())
+        let map = createNavigation(
+            "Map",
+            UIImage(systemName: "mappin.and.ellipse"),
+            controller: UIHostingController(
+                rootView: LocationsView().environmentObject(locationsViewModel)
+            )
+        )
+        let foodAdvisor = createNavigation(
+            "Food Advisor",
+            UIImage(systemName: "fork.knife"),
+            controller: FoodAdvisorViewController()
+        )
         
-        let impressionsViewModel = ImpressionsViewModel()
-        let review = createNavigation("Add Review", UIImage(systemName: "person.3.fill"), controller: UIHostingController(rootView: ImpressionsView().environmentObject(impressionsViewModel)))
+        let addReviewModel = AddReviewViewModel()
+        let review = createNavigation(
+            "Add Review",
+            UIImage(systemName: "person.3.fill"),
+            controller: UIHostingController(
+                rootView: AddReviewView().environmentObject(addReviewModel)
+            )
+        )
         
         let currencyViewModel = CurrencyViewModel()
-        let currency = createNavigation("Currency", UIImage(systemName: "larisign.arrow.circlepath"), controller: UIHostingController(rootView: CurrencyView().environmentObject(currencyViewModel)))
+        let currency = createNavigation(
+            "Currency",
+            UIImage(systemName: "larisign.arrow.circlepath"),
+            controller: UIHostingController(
+                rootView: CurrencyView().environmentObject(currencyViewModel))
+        )
         
         
         
@@ -60,19 +84,21 @@ class TabBarController: UITabBarController {
     }
     
     
-    private func createNavigation(_ title: String, _ image: UIImage?, controller: UIViewController) -> UINavigationController {
+    private func createNavigation(
+        _ title: String, 
+        _ image: UIImage?,
+        controller: UIViewController
+    ) -> UINavigationController {
         
         let navController = UINavigationController(rootViewController: controller)
-        
-        
         navController.tabBarItem.title = title
         navController.tabBarItem.image = image
         navController.tabBarItem.setTitleTextAttributes([.foregroundColor: UIColor.black], for: .selected)
         
         
-        let logoutButton = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logoutButtonTapped))
+        let logoutButton = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: 
+        #selector(logoutButtonTapped))
         controller.navigationItem.rightBarButtonItem = logoutButton
-        
         controller.title = title
         
         return navController
@@ -80,7 +106,6 @@ class TabBarController: UITabBarController {
     
     
     @objc func logoutButtonTapped() {
-        
         AuthService.shared.signOut { [weak self] error in
             guard let self = self else { return }
                 if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
@@ -88,7 +113,6 @@ class TabBarController: UITabBarController {
                 }
             }
         }
-        
     }
     
 
