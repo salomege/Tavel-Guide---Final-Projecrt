@@ -108,7 +108,8 @@ class TabBarController: UITabBarController {
     @objc func logoutButtonTapped() {
         AuthService.shared.signOut { [weak self] error in
             guard let self = self else { return }
-                if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
+                if let sceneDelegate = self.view.window?.windowScene?.delegate as? 
+                    SceneDelegate {
                     sceneDelegate.checkAuthentication()
                 }
             }

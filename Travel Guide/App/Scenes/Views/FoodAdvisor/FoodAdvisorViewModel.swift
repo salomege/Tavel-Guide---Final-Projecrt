@@ -20,7 +20,7 @@ class FoodAdvisorViewModel {
 
     func fetchData(regionName: String, completion: @escaping (Result<Dish, Error>) -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            let matchingDish = Dish.dummyData.first(where: { $0.region == regionName })
+            let matchingDish = Dish.dummyData.first(where: { $0.region == regionName.capitalized })
 
             if let dish = matchingDish {
                 let info = Info(

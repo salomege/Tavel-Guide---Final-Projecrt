@@ -25,9 +25,7 @@ final class CitiesListViewController: UIViewController {
     }()
     
     private var cities = [City]()
-    
     private let viewModel = CitiesListViewModel()
-    
     private var loader: UIAlertController?
 
     
@@ -110,7 +108,6 @@ extension CitiesListViewController: UICollectionViewDelegate {
 // MARK: - CitiesListViewModelDelegate
 extension CitiesListViewController: CitiesListViewModelDelegate {
     func citiesFetched(_ cities: [City]) {
-        // Dismiss loader once data is fetched
         if let loader = self.loader {
             LoaderHelper.stopLoader(loader: loader)
         }
@@ -119,11 +116,9 @@ extension CitiesListViewController: CitiesListViewModelDelegate {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
-        
     }
 
     func showError(_ error: Error) {
-        // Dismiss loader if there's an error
         if let loader = self.loader {
             LoaderHelper.stopLoader(loader: loader)
         }
@@ -137,11 +132,7 @@ extension CitiesListViewController: CitiesListViewModelDelegate {
     }
     
     private func loadDataWithLoader() {
-            // Show loader while data is being fetched
-            loader = LoaderHelper.loader(in: self.view)
-
-            // Fetch data
-            viewModel.fetchCities()
+        loader = LoaderHelper.loader(in: self.view)
+        viewModel.fetchCities()
         }
-   
 }

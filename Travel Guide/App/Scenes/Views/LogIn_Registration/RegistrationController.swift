@@ -90,7 +90,7 @@ class RegisterController: UIViewController {
     
     // MARK: - Selectors
     @objc func didTapSignUp() {
-        let registerUserRequest = RegiserUserRequest(
+        let registerUserRequest = RegisterUserRequest(
             username: self.usernameField.text ?? "",
             email: self.emailField.text ?? "",
             password: self.passwordField.text ?? ""
@@ -126,10 +126,7 @@ class RegisterController: UIViewController {
             }
         }
     }
-    
-//    @objc private func didTapSignIn() {
-//        self.navigationController?.popToRootViewController(animated: true)
-//    }
+
     
     @objc private func didTapSignIn() {
         let logInPage = LoginController()

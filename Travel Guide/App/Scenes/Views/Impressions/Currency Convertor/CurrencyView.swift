@@ -21,9 +21,8 @@ struct CurrencyView: View {
         }
         .padding()
         .onAppear {
-            viewModel.fetchData {
+            viewModel.fetchData()
             }
-        }
         .padding(.top, 200)
 
         Spacer()

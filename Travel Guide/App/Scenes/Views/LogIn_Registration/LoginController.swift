@@ -10,13 +10,21 @@ import UIKit
 class LoginController: UIViewController {
     
     // MARK: - UI Components
-    private let headerView = HeaderView(title: "Sign In", subTitle: "Sign in to your account")
-    
+    private let headerView = HeaderView(
+        title: "Sign In",
+        subTitle: "Sign in to your account"
+    )
     private let emailField = CustomTextField(fieldType: .username)
     private let passwordField = CustomTextField(fieldType: .password)
-    
-    private let signInButton = CustomButton(title: "Sign In", hasBackground: true, fontSize: .big)
-    private let newUserButton = CustomButton(title: "New User? Create Account.", fontSize: .med)
+    private let signInButton = CustomButton(
+        title: "Sign In", 
+        hasBackground: true,
+        fontSize: .big
+    )
+    private let newUserButton = CustomButton(
+        title: "New User? Create Account.",
+        fontSize: .med
+    )
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -98,7 +106,9 @@ class LoginController: UIViewController {
             return
         }
         
-        AuthService.shared.signIn(with: loginRequest) { error in
+        AuthService.shared.signIn(with: loginRequest) { [weak self] error in
+            guard let self else { return }
+            
             if let error = error {
                 AlertManager.showSignInErrorAlert(on: self, with: error)
                 return

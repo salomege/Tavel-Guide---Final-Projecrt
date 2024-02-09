@@ -123,8 +123,6 @@ extension CityDetailsViewController: CityDetailsViewModelDelegate {
         Task {
             navigationItem.title = city.title
             descriptionLabel.text = city.overview
-//          let topPlacesText = city.topPlaces.map { $0.name }.joined(separator: ", ")
-//                       topPlaces.text = "Top Places: \(topPlacesText)"
 
         }
     }

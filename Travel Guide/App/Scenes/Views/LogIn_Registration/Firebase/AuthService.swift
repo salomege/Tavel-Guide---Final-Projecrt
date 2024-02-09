@@ -14,13 +14,7 @@ class AuthService {
     public static let shared = AuthService()
     private init() {}
     
-    /// A method to register the user
-    /// - Parameters:
-    ///   - userRequest: The users information (email, password, username)
-    ///   - completion: A completion with two values...
-    ///   - Bool: wasRegistered - Determines if the user was registered and saved in the database correctly
-    ///   - Error?: An optional error if firebase provides once
-    public func registerUser(with userRequest: RegiserUserRequest, completion: @escaping (Bool, Error?)->Void) {
+    public func registerUser(with userRequest: RegisterUserRequest, completion: @escaping (Bool, Error?)->Void) {
         let username = userRequest.username
         let email = userRequest.email
         let password = userRequest.password
@@ -102,7 +96,6 @@ class AuthService {
                     let user = User(username: username, email: email, userUID: userUID)
                     completion(user, nil)
                 }
-                
             }
     }
 }

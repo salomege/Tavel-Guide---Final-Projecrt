@@ -8,11 +8,11 @@
 import UIKit
 
 final class FoodAdvisorViewController: UIViewController, UITextFieldDelegate {
+    private let viewModel = FoodAdvisorViewModel()
     
     private let headerImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "drawing-georgian-food")
-        // imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -55,9 +55,7 @@ final class FoodAdvisorViewController: UIViewController, UITextFieldDelegate {
         stackView.spacing = 16
         return stackView
     }()
-    
-    var viewModel = FoodAdvisorViewModel()
-    
+        
     
     // MARK: - lifeCycle
     override func viewDidLoad() {
@@ -116,34 +114,29 @@ final class FoodAdvisorViewController: UIViewController, UITextFieldDelegate {
                 handler: { [weak self] action in
                     self?.submitButtonTapped()
                 }
-            ),for: .touchUpInside
-        )}
+            ), for: .touchUpInside
+        )
+    }
     private func submitButtonTapped() {
         guard let region = regionTextField.text, !region.isEmpty
-                
         else {
             showAlert(with: "Enter Region")
             return
-            
         }
-        
-        self.viewModel.fetchData(regionName: region) { [weak self] result in
-            guard let self = self else { return }
-            
+        self.viewModel.fetchData(regionName: region) { result in
             switch result {
             case .success(_):
-                print("Data fetched successfully")
-                self.updateUI() 
+                DispatchQueue.main.async { [weak self] in
+                    self?.updateUI()
+                }
             case .failure(let error):
                 print("Error: \(error)")
             }
         }
-        
     }
     
     private func updateUI() {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self, let info = self.viewModel.result else { return }
+            guard let info = viewModel.result else { return }
             
             let imageName = info.photo
             self.resultImage.image = UIImage(named: imageName)
@@ -169,7 +162,6 @@ final class FoodAdvisorViewController: UIViewController, UITextFieldDelegate {
             
             self.resultLabel.attributedText = attributedText
         }
-    }
     
     private func showAlert(with title: String) {
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)

@@ -99,7 +99,7 @@ class HomePageViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             mainStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            mainStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 100),
+            mainStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             
             welcomeImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             welcomeImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),

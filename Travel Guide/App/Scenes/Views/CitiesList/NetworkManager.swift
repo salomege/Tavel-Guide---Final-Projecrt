@@ -48,7 +48,7 @@ final class NetworkManager {
             return
         }
         DispatchQueue.main.async {
-                   completion(nil) // Pass nil to indicate the start of loading
+                   completion(nil)
                }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
@@ -68,7 +68,7 @@ extension NetworkManager {
     func fetchCityDetails(for detailsId: String) async throws -> CityDetails {
         let urlStr = "https://mocki.io/v1/\(detailsId)"
 
-        print("NetworkManager: Constructing URL for city details: \(urlStr)") // Before URL Construction
+       // print("NetworkManager: Constructing URL for city details: \(urlStr)")
 
         guard let url = URL(string: urlStr) else {
             throw NSError(domain: "com.yourdomain.app", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
@@ -77,12 +77,12 @@ extension NetworkManager {
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
 
-             print("NetworkManager: Received raw response data for city details: \(data)") // After API Call
+             //print("NetworkManager: Received raw response data for city details: \(data)")
 
             do {
                 let cityDetail = try JSONDecoder().decode(CityDetails.self, from: data)
 
-                print("NetworkManager: Parsed CityDetails: \(cityDetail)") // Before Data Passing
+                //print("NetworkManager: Parsed CityDetails: \(cityDetail)") // Before Data Passing
 
                 return cityDetail
             } catch {

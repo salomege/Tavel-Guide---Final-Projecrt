@@ -14,13 +14,15 @@ class CurrencyViewModel: ObservableObject {
     
     
     // MARK: - Public Methods
-    func fetchData(completion: @escaping () -> Void) {
+    func fetchData() {
         let url = "https://api.apilayer.com/exchangerates_data/latest?symbols=USD%2CEUR%2CGBP&base=GEL"
         var request = URLRequest(url: URL(string: url)!, timeoutInterval: Double.infinity)
         request.httpMethod = "GET"
         request.addValue("MPdZ09HS5piMxOP9PMJbq8XuLKZxmpf6", forHTTPHeaderField: "apikey")
         
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+            guard let self else { return }
+            
             if let error = error {
                 print("Error fetching data: \(error)")
                 return
@@ -35,11 +37,9 @@ class CurrencyViewModel: ObservableObject {
                 let decoder = JSONDecoder()
                 let result = try decoder.decode(Currency.self, from: data)
                 
-                DispatchQueue.main.async {
-                    self.currency = result
+                DispatchQueue.main.async { [weak self] in
+                    self?.currency = result
                 }
-                
-                completion()
             } catch {
                 print("Error decoding JSON: \(error)")
             }

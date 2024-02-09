@@ -15,16 +15,17 @@ final class CustomButton: UIButton {
         case small
     }
     
-    init(title: String, hasBackground: Bool = false, fontSize: FontSize) {
-        super.init(frame: .zero)
-        setTitle(title, for: .normal)
-        layer.cornerRadius = 12
-        layer.masksToBounds = true
+    init(title: String, hasBackground: Bool = false, fontSize: FontSize) 
+    {
+    super.init(frame: .zero)
+    setTitle(title, for: .normal)
+    layer.cornerRadius = 12
+    layer.masksToBounds = true
         
         backgroundColor = hasBackground ? UIColor(named: "AccentColor") : .clear
 
-        
-        let titleColor: UIColor = hasBackground ? .white : UIColor(named: "AccentColor")!
+        let titleColor: UIColor = hasBackground ? .white : 
+            UIColor(named: "AccentColor")!
         setTitleColor(titleColor, for: .normal)
         
         switch fontSize {

@@ -32,12 +32,7 @@ struct LocationPreviewView: View {
         .cornerRadius(10)
 }
 }
-//struct LocationPreviewView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LocationPreviewView(location: LocationsDataService.locations.first!)
-//    }
-//        .environmentObject(LocationsViewModel())
-//}
+
 
 extension LocationPreviewView {
    // private var imageSection: some View {
