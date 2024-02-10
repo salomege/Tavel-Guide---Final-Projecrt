@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F14845E62B757BC400728A4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14845E52B757BC400728A4F /* LaunchScreen.storyboard */; };
+		F14845E82B774EC100728A4F /* CurrencyNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14845E72B774EC100728A4F /* CurrencyNetworkManager.swift */; };
 		F19A89762B58811900CB4AB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A89752B58811900CB4AB5 /* AppDelegate.swift */; };
 		F19A89782B58811900CB4AB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A89772B58811900CB4AB5 /* SceneDelegate.swift */; };
 		F19A897A2B58811900CB4AB5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A89792B58811900CB4AB5 /* TabBarController.swift */; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		F14845E52B757BC400728A4F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F14845E72B774EC100728A4F /* CurrencyNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyNetworkManager.swift; sourceTree = "<group>"; };
 		F19A89722B58811900CB4AB5 /* Travel Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F19A89752B58811900CB4AB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F19A89772B58811900CB4AB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,8 +153,9 @@
 			children = (
 				F19A89772B58811900CB4AB5 /* SceneDelegate.swift */,
 				F19A89752B58811900CB4AB5 /* AppDelegate.swift */,
+				F1B2B0962B7188C0003B557A /* LoaderHelper.swift */,
 				F19A89942B588D9000CB4AB5 /* Scenes */,
-				F19A89962B588DBD00CB4AB5 /* Model */,
+				F19A89962B588DBD00CB4AB5 /* Models */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -179,23 +182,26 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		F19A89962B588DBD00CB4AB5 /* Model */ = {
+		F19A89962B588DBD00CB4AB5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F1B2AF632B5F8659003B557A /* Location.swift */,
 				F19A899F2B59DF9100CB4AB5 /* City.swift */,
+				F1B2AF712B5F8F06003B557A /* Review.swift */,
 				F19A89AA2B5A061000CB4AB5 /* CityDetails.swift */,
+				F1B2AF772B608F49003B557A /* FoodAdvisor.swift */,
 				F1B2AFEC2B6874BB003B557A /* RegisterUserRequest.swift */,
 				F1B2AFEE2B688FFA003B557A /* LoginUserRequest.swift */,
+				F1B2B0902B6CF218003B557A /* CurrencyConvertor.swift */,
 				F1B2AFF92B68EC55003B557A /* User.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F19A89972B588E4700CB4AB5 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
 				F19A89792B58811900CB4AB5 /* TabBarController.swift */,
-				F1B2B0962B7188C0003B557A /* LoaderHelper.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -223,7 +229,6 @@
 		F19A899A2B588E8900CB4AB5 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				F1B2AF632B5F8659003B557A /* Location.swift */,
 				F1B2AF652B5F868B003B557A /* LocationsDataService.swift */,
 				F1B2AF672B5F86DE003B557A /* LocationsView.swift */,
 				F1B2AF692B5F8874003B557A /* LocationPreviewView.swift */,
@@ -237,7 +242,6 @@
 			isa = PBXGroup;
 			children = (
 				F19A898F2B588A5600CB4AB5 /* FoodAdvisorViewController.swift */,
-				F1B2AF772B608F49003B557A /* FoodAdvisor.swift */,
 				F1B2AF752B608732003B557A /* FoodAdvisorViewModel.swift */,
 			);
 			path = FoodAdvisor;
@@ -246,7 +250,6 @@
 		F19A899C2B588EA600CB4AB5 /* Impressions */ = {
 			isa = PBXGroup;
 			children = (
-				F1B2AF712B5F8F06003B557A /* Review.swift */,
 				F1B2AF6F2B5F8D03003B557A /* AddReviewView.swift */,
 				F1B2AF732B5F9099003B557A /* AddReviewViewModel.swift */,
 				F1B2B08D2B6CF1B2003B557A /* Currency Convertor */,
@@ -297,8 +300,8 @@
 			isa = PBXGroup;
 			children = (
 				F1B2B08E2B6CF1D5003B557A /* CurrencyView.swift */,
-				F1B2B0902B6CF218003B557A /* CurrencyConvertor.swift */,
 				F1B2B0922B6CF262003B557A /* CurrencyViewModel.swift */,
+				F14845E72B774EC100728A4F /* CurrencyNetworkManager.swift */,
 			);
 			path = "Currency Convertor";
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				F1B2AFA42B67A500003B557A /* CostomButton.swift in Sources */,
 				F19A899E2B59DECD00CB4AB5 /* CityItemCollectionViewCell.swift in Sources */,
 				F19A89902B588A5600CB4AB5 /* FoodAdvisorViewController.swift in Sources */,
+				F14845E82B774EC100728A4F /* CurrencyNetworkManager.swift in Sources */,
 				F19A898A2B5885BC00CB4AB5 /* WelcomePageViewController.swift in Sources */,
 				F1B2AFA62B67B045003B557A /* LoginController.swift in Sources */,
 				F1B2AF702B5F8D03003B557A /* AddReviewView.swift in Sources */,
