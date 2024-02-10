@@ -12,7 +12,7 @@
 		F19A89782B58811900CB4AB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A89772B58811900CB4AB5 /* SceneDelegate.swift */; };
 		F19A897A2B58811900CB4AB5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A89792B58811900CB4AB5 /* TabBarController.swift */; };
 		F19A897F2B58811A00CB4AB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F19A897E2B58811A00CB4AB5 /* Assets.xcassets */; };
-		F19A898A2B5885BC00CB4AB5 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A89892B5885BB00CB4AB5 /* HomePageViewController.swift */; };
+		F19A898A2B5885BC00CB4AB5 /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A89892B5885BB00CB4AB5 /* WelcomePageViewController.swift */; };
 		F19A898C2B58880300CB4AB5 /* CitiesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A898B2B58880300CB4AB5 /* CitiesListViewController.swift */; };
 		F19A89902B588A5600CB4AB5 /* FoodAdvisorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A898F2B588A5600CB4AB5 /* FoodAdvisorViewController.swift */; };
 		F19A899E2B59DECD00CB4AB5 /* CityItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A899D2B59DECD00CB4AB5 /* CityItemCollectionViewCell.swift */; };
@@ -63,7 +63,7 @@
 		F19A89792B58811900CB4AB5 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F19A897E2B58811A00CB4AB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F19A89832B58811A00CB4AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F19A89892B5885BB00CB4AB5 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		F19A89892B5885BB00CB4AB5 /* WelcomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageViewController.swift; sourceTree = "<group>"; };
 		F19A898B2B58880300CB4AB5 /* CitiesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListViewController.swift; sourceTree = "<group>"; };
 		F19A898F2B588A5600CB4AB5 /* FoodAdvisorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAdvisorViewController.swift; sourceTree = "<group>"; };
 		F19A899D2B59DECD00CB4AB5 /* CityItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 			children = (
 				F19A89972B588E4700CB4AB5 /* TabBar */,
 				F1B2AF9E2B67A267003B557A /* LogIn_Registration */,
-				F19A89982B588E5900CB4AB5 /* HomePage */,
+				F19A89982B588E5900CB4AB5 /* WelcomePage */,
 				F19A89992B588E6B00CB4AB5 /* CitiesList */,
 				F19A899A2B588E8900CB4AB5 /* Map */,
 				F19A899B2B588E9300CB4AB5 /* FoodAdvisor */,
@@ -200,12 +200,12 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		F19A89982B588E5900CB4AB5 /* HomePage */ = {
+		F19A89982B588E5900CB4AB5 /* WelcomePage */ = {
 			isa = PBXGroup;
 			children = (
-				F19A89892B5885BB00CB4AB5 /* HomePageViewController.swift */,
+				F19A89892B5885BB00CB4AB5 /* WelcomePageViewController.swift */,
 			);
-			path = HomePage;
+			path = WelcomePage;
 			sourceTree = "<group>";
 		};
 		F19A89992B588E6B00CB4AB5 /* CitiesList */ = {
@@ -398,7 +398,7 @@
 				F1B2AFA42B67A500003B557A /* CostomButton.swift in Sources */,
 				F19A899E2B59DECD00CB4AB5 /* CityItemCollectionViewCell.swift in Sources */,
 				F19A89902B588A5600CB4AB5 /* FoodAdvisorViewController.swift in Sources */,
-				F19A898A2B5885BC00CB4AB5 /* HomePageViewController.swift in Sources */,
+				F19A898A2B5885BC00CB4AB5 /* WelcomePageViewController.swift in Sources */,
 				F1B2AFA62B67B045003B557A /* LoginController.swift in Sources */,
 				F1B2AF702B5F8D03003B557A /* AddReviewView.swift in Sources */,
 				F1B2AF722B5F8F06003B557A /* Review.swift in Sources */,

@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func checkAuthentication() {
         if Auth.auth().currentUser == nil {
 
-            goToController(with: HomePageViewController())
+            goToController(with: WelcomePageViewController())
         } else {
             let user = Auth.auth().currentUser!
             let docRef = Firestore.firestore().collection("users").document(user.uid)
@@ -40,7 +40,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     if let document = document, document.exists {
                         self.goToController(with: TabBarController())
                     } else {
-                        self.goToController(with: HomePageViewController())
+                        self.goToController(with: WelcomePageViewController())
                     }
                 }
             }

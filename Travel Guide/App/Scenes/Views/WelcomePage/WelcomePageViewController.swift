@@ -1,5 +1,5 @@
 //
-//  HomePageViewController.swift
+//  WelcomePageViewController.swift
 //  Travel Guide
 //
 //  Created by salome on 17.01.24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomePageViewController: UIViewController {
+class WelcomePageViewController: UIViewController {
     
     private let welcomeImageView: UIImageView = {
         let imageView = UIImageView(frame: UIScreen.main.bounds)
