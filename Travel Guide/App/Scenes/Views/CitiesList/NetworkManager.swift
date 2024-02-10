@@ -15,7 +15,7 @@ final class NetworkManager {
     
     // MARK: - Fetch Cities
     func fetchCities(completion: @escaping (Result<[City], Error>) -> Void) {
-        let urlStr = "https://mocki.io/v1/fd615d0c-52c7-4cde-8653-e0d27a4f4586"
+        let urlStr = "https://mocki.io/v1/08664644-b0c0-4d9d-ac29-b535999ad62a"
         guard let url = URL(string: urlStr) else {
             completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
             return
