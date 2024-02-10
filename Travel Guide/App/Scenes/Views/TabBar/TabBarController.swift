@@ -97,10 +97,7 @@ class TabBarController: UITabBarController {
         navController.tabBarItem.title = title
         navController.tabBarItem.image = image
         navController.tabBarItem.setTitleTextAttributes([.foregroundColor: UIColor(named: "TabBarText") ?? .white], for: .selected)
-
-        
-//                                                         navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(named: "TabBarText") ?? .white]
-                                                         
+                           
         
         let logoutButton = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: 
         #selector(logoutButtonTapped))
