@@ -11,6 +11,7 @@ struct CurrencyView: View {
     @StateObject var viewModel = CurrencyViewModel()
     @State private var amount: String = ""
     @State private var selectedCurrency: String = "USD"
+    @Environment(\.colorScheme) var colorScheme
 
     var body: some View {
         VStack {
@@ -26,7 +27,7 @@ struct CurrencyView: View {
         .padding(.top, 200)
 
         Spacer()
-        Image("currency-back")
+        Image(colorScheme == .light ? "currency-back" : "currency-dark")
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: UIScreen.main.bounds.width, height: 200)

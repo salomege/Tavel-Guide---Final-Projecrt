@@ -12,8 +12,8 @@ final class FoodAdvisorViewController: UIViewController, UITextFieldDelegate {
     
     private let headerImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "drawing-georgian-food")
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -65,13 +65,28 @@ final class FoodAdvisorViewController: UIViewController, UITextFieldDelegate {
         setupConstraints()
         setupSubmitButtonAction()
         setupRegionTextField()
-        
+        updateHeaderImage()
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle {
+            updateHeaderImage()
+        }
+    }
+
+    private func updateHeaderImage() {
+        if traitCollection.userInterfaceStyle == .dark {
+            headerImage.image = UIImage(named: "food-dark")
+        } else {
+            headerImage.image = UIImage(named: "drawing-georgian-food")
+        }
     }
     
     // MARK: - Private Methods
     
     private func setupBackground() {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "Black-white")
     }
     
     private func addSubviews() {
