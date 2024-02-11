@@ -157,17 +157,17 @@ final class FoodAdvisorViewController: UIViewController, UITextFieldDelegate {
             self.resultImage.image = UIImage(named: imageName)
             
             let nameAttributes: [NSAttributedString.Key: Any] = [
-                .foregroundColor: UIColor.darkGray,
+                .foregroundColor: UIColor(named: "grey-white-text") ?? .gray,
                 .font: UIFont.boldSystemFont(ofSize: 18)
             ]
             
             let ingredientsAttributes: [NSAttributedString.Key: Any] = [
-                .foregroundColor: UIColor.black,
+                .foregroundColor: UIColor(named: "black-white-text") ?? .gray,
                 .font: UIFont.systemFont(ofSize: 14)
             ]
             
             let aboutInfoAttributes: [NSAttributedString.Key: Any] = [
-                .foregroundColor: UIColor.gray,
+                .foregroundColor: UIColor(named: "grey-white-text") ?? .gray,
                 .font: UIFont.systemFont(ofSize: 14)
             ]
             

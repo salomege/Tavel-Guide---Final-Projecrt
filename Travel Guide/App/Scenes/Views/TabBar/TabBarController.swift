@@ -29,7 +29,7 @@ class TabBarController: UITabBarController {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithTransparentBackground()
         navBarAppearance.backgroundColor = .systemBackground
-        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(named: "TabBarText") ?? .white]
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(named: "black-white-text") ?? .white]
 
 
         UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
@@ -98,6 +98,9 @@ class TabBarController: UITabBarController {
         navController.tabBarItem.image = image
         navController.tabBarItem.setTitleTextAttributes([.foregroundColor: UIColor(named: "TabBarText") ?? .white], for: .selected)
                            
+        navController.tabBarItem.setTitleTextAttributes([.foregroundColor: UIColor(named: "black-white-text") ?? .white], for: .selected)
+
+                                  
         
         let logoutButton = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: 
         #selector(logoutButtonTapped))
