@@ -5,6 +5,7 @@
 //  Created by salome on 18.01.24.
 //
 
+
 import UIKit
 
 final class CityItemCollectionViewCell: UICollectionViewCell {
@@ -114,10 +115,35 @@ final class CityItemCollectionViewCell: UICollectionViewCell {
     }
     
     private func setImage(from url: String) {
-        NetworkManager.shared.downloadImage(from: url) { [weak self] image in
+        
+        ImageCache.shared.getImage(url: URL(string: "https://drive.google.com/uc?id=\(url)")!) { [weak self] image in
             DispatchQueue.main.async {
                 self?.cityImageView.image = image
             }
         }
+    }
+}
+
+class ImageCache {
+    static let shared = ImageCache()
+    
+    private var cache = NSCache<NSString, UIImage>()
+    
+    func getImage(url: URL, completion: @escaping (UIImage?) -> Void) {
+
+        if let cachedImage = cache.object(forKey: url.absoluteString as NSString) {
+            completion(cachedImage)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, let image = UIImage(data: data) else {
+                completion(nil)
+                return
+            }
+            
+            self.cache.setObject(image, forKey: url.absoluteString as NSString)
+            completion(image)
+        }.resume()
     }
 }

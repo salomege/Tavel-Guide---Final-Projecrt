@@ -47,9 +47,9 @@ final class NetworkManager {
             completion(nil)
             return
         }
-        DispatchQueue.main.async {
-                   completion(nil)
-               }
+//        DispatchQueue.main.async {
+//                   completion(nil)
+//               }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil, let image = UIImage(data: data) else {
