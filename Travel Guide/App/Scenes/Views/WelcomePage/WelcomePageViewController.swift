@@ -112,6 +112,8 @@ class WelcomePageViewController: UIViewController {
     }
     
     @objc private func didTapJoinUs() {
+        UserDefaults.standard.set(true, forKey: "userJoined")
+        
         let rc = RegisterController()
         self.navigationController?.pushViewController(rc, animated: true)
     }
