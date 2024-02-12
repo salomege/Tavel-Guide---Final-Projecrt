@@ -6,14 +6,13 @@ The Travel Guide is a Swift-based application designed to assist tourists travel
 
 Features:
 
-## Welcome Page: 
+## Welcome Page, ## Registration Page, ##Log in Page
 The application begins with a welcoming page. Upon clicking the "Join Us" button, users are directed to the 
-## registration page and subsequently to the authorization page for seamless access.
+registration page and subsequently to the authorization page for seamless access.
 Secure Authentication: A secure and seamless registration and login process is implemented, powered by Firebase authentication.
 
 ## Top Destinations: 
-After logging in, users are directed to the Top Destinations page, which showcases a collection view displaying all the information about the top places tourists can visit in Georgia.
-Interactive 
+After logging in, users are directed to the Top Destinations page, which showcases a collection view displaying all the information about the top places tourists can visit in Georgia. 
 ## Map: 
 The application features an interactive map using MapKit and SwiftUI, marking all museums and places of interest for tourists in each particular region or city.
 ## Food Advisor: 
