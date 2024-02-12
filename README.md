@@ -6,7 +6,7 @@ The Travel Guide is a Swift-based application designed to assist tourists travel
 
 Features:
 
-## Welcome Page, ## Registration Page, ##Log in Page
+## Welcome Page,  Registration Page, Log in Page
 The application begins with a welcoming page. Upon clicking the "Join Us" button, users are directed to the 
 registration page and subsequently to the authorization page for seamless access.
 Secure Authentication: A secure and seamless registration and login process is implemented, powered by Firebase authentication.
