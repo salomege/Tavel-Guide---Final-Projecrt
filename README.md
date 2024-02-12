@@ -4,6 +4,9 @@
 
 The Travel Guide is a Swift-based application designed to assist tourists traveling to Georgia by providing them with all the necessary information needed during their journey in Georgia.
 
+## Light and Dark Mode Support
+The Travel Guide app is designed with consideration for user preferences, offering support for both light and dark modes. 
+
 Features:
 
 ## Welcome Page,  Registration Page, Log in Page
