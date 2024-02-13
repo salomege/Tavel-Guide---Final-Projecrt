@@ -38,7 +38,9 @@ struct LocationsView: View {
                         }
                     }
                     .sheet(item: $vm.sheetLoction) { loction  in
-                      LocationDetailsView(location: loction)
+                      PopupView(location: loction)
+                            .padding()
+                        
                     }
                 }
             }

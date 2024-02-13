@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		F14845E62B757BC400728A4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14845E52B757BC400728A4F /* LaunchScreen.storyboard */; };
 		F14845E82B774EC100728A4F /* CurrencyNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14845E72B774EC100728A4F /* CurrencyNetworkManager.swift */; };
-		F14845EA2B7AF29000728A4F /* LocationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14845E92B7AF29000728A4F /* LocationDetailsView.swift */; };
+		F14845EA2B7AF29000728A4F /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14845E92B7AF29000728A4F /* PopupView.swift */; };
 		F19A89762B58811900CB4AB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A89752B58811900CB4AB5 /* AppDelegate.swift */; };
 		F19A89782B58811900CB4AB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A89772B58811900CB4AB5 /* SceneDelegate.swift */; };
 		F19A897A2B58811900CB4AB5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A89792B58811900CB4AB5 /* TabBarController.swift */; };
@@ -60,7 +60,7 @@
 /* Begin PBXFileReference section */
 		F14845E52B757BC400728A4F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F14845E72B774EC100728A4F /* CurrencyNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyNetworkManager.swift; sourceTree = "<group>"; };
-		F14845E92B7AF29000728A4F /* LocationDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsView.swift; sourceTree = "<group>"; };
+		F14845E92B7AF29000728A4F /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		F19A89722B58811900CB4AB5 /* Travel Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F19A89752B58811900CB4AB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F19A89772B58811900CB4AB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -235,7 +235,7 @@
 				F1B2AF672B5F86DE003B557A /* LocationsView.swift */,
 				F1B2AF692B5F8874003B557A /* LocationPreviewView.swift */,
 				F1B2AF6B2B5F88E2003B557A /* LocationListView.swift */,
-				F14845E92B7AF29000728A4F /* LocationDetailsView.swift */,
+				F14845E92B7AF29000728A4F /* PopupView.swift */,
 				F1B2AF6D2B5F892B003B557A /* LocationsViewModel.swift */,
 			);
 			path = Map;
@@ -404,7 +404,7 @@
 				F1B2AFA42B67A500003B557A /* CostomButton.swift in Sources */,
 				F19A899E2B59DECD00CB4AB5 /* CityItemCollectionViewCell.swift in Sources */,
 				F19A89902B588A5600CB4AB5 /* FoodAdvisorViewController.swift in Sources */,
-				F14845EA2B7AF29000728A4F /* LocationDetailsView.swift in Sources */,
+				F14845EA2B7AF29000728A4F /* PopupView.swift in Sources */,
 				F14845E82B774EC100728A4F /* CurrencyNetworkManager.swift in Sources */,
 				F19A898A2B5885BC00CB4AB5 /* WelcomePageViewController.swift in Sources */,
 				F1B2AFA62B67B045003B557A /* LoginController.swift in Sources */,
