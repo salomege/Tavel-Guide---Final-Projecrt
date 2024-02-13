@@ -9,7 +9,7 @@ import UIKit
 
 final class NetworkManager {
     static let shared = NetworkManager()
-
+    
     
     private init() {}
     
@@ -47,9 +47,6 @@ final class NetworkManager {
             completion(nil)
             return
         }
-//        DispatchQueue.main.async {
-//                   completion(nil)
-//               }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil, let image = UIImage(data: data) else {
@@ -67,23 +64,17 @@ final class NetworkManager {
 extension NetworkManager {
     func fetchCityDetails(for detailsId: String) async throws -> CityDetails {
         let urlStr = "https://mocki.io/v1/\(detailsId)"
-
-       // print("NetworkManager: Constructing URL for city details: \(urlStr)")
-
+                
         guard let url = URL(string: urlStr) else {
             throw NSError(domain: "com.yourdomain.app", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
         }
-
+        
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
-
-             //print("NetworkManager: Received raw response data for city details: \(data)")
-
+            
             do {
                 let cityDetail = try JSONDecoder().decode(CityDetails.self, from: data)
-
-                //print("NetworkManager: Parsed CityDetails: \(cityDetail)") // Before Data Passing
-
+  
                 return cityDetail
             } catch {
                 throw NSError(domain: "com.yourdomain.app", code: -2, userInfo: [NSLocalizedDescriptionKey: "Decoding error: \(error.localizedDescription)"])

@@ -15,13 +15,13 @@ struct LocationsView: View {
     var body: some View {
         ZStack {
             Map(coordinateRegion: $vm.mapRegion,
-        annotationItems: vm.locations,
+                annotationItems: vm.locations,
                 annotationContent: { location in MapAnnotation(coordinate: location.coordinates)  {
                 Image(systemName: "location.north.fill")
                     .rotationEffect(.degrees(180))
             }
             })
-                .ignoresSafeArea()
+            .ignoresSafeArea()
             
             VStack(spacing: 0) {
                 header
@@ -38,7 +38,7 @@ struct LocationsView: View {
                         }
                     }
                     .sheet(item: $vm.sheetLoction) { loction  in
-                      PopupView(location: loction)
+                        PopupView(location: loction)
                             .padding()
                         
                     }

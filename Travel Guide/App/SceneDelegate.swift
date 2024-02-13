@@ -14,25 +14,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, 
-           options connectionOptions: UIScene.ConnectionOptions) {
-           self.setupWindow(with: scene)
-           self.checkAuthentication()
-       }
-       
-       private func setupWindow(with scene: UIScene) {
-           guard let windowScene = (scene as? UIWindowScene) else { return }
-           let window = UIWindow(windowScene: windowScene)
-           self.window = window
-           self.window?.makeKeyAndVisible()
-       }
-       
+               options connectionOptions: UIScene.ConnectionOptions) {
+        self.setupWindow(with: scene)
+        self.checkAuthentication()
+    }
+    
+    private func setupWindow(with scene: UIScene) {
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: windowScene)
+        self.window = window
+        self.window?.makeKeyAndVisible()
+    }
+    
     func checkAuthentication() {
         if Auth.auth().currentUser == nil {
             if UserDefaults.standard.bool(forKey: "userJoined")  {
-          //    goToController(with: LoginController())
-             goToController(with: WelcomePageViewController())
+                goToController(with: LoginController())
             } else {
-               goToController(with: WelcomePageViewController())
+                goToController(with: WelcomePageViewController())
             }
         } else {
             let user = Auth.auth().currentUser!
@@ -54,7 +53,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             }
         }
     }
-
+    
     
     private func goToController(with viewController: UIViewController) {
         DispatchQueue.main.async { [weak self] in

@@ -15,22 +15,22 @@ struct LocationPreviewView: View {
     
     var body: some View {
         HStack(alignment: .bottom, spacing: 0) {
-        VStack(spacing: 16.0) {
-           imageSection
-            titleSection
+            VStack(spacing: 16.0) {
+                imageSection
+                titleSection
+            }
+            VStack(spacing: 8) {
+                learnMoreButton
+                nextButton
+            }
         }
-        VStack(spacing: 8) {
-            learnMoreButton
-            nextButton
-        }
-    }
         .padding(20)
         .background(RoundedRectangle(cornerRadius: 10)
             .fill(.ultraThinMaterial)
             .offset(y: 65)
         )
         .cornerRadius(10)
-}
+    }
 }
 
 
@@ -60,7 +60,7 @@ extension LocationPreviewView {
                 .font(.subheadline)
         }
         .frame(maxWidth: .infinity)
-}
+    }
     private var learnMoreButton: some View {
         Button {
             vm.sheetLoction = location
@@ -81,6 +81,6 @@ extension LocationPreviewView {
                 .frame(width:124, height: 34)
         }
         .buttonStyle(.borderedProminent)
-
+        
     }
 }

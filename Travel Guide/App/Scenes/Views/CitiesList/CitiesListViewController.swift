@@ -27,7 +27,7 @@ final class CitiesListViewController: UIViewController {
     private var cities = [City]()
     private let viewModel = CitiesListViewModel()
     private var loader: UIAlertController?
-
+    
     
     // MARK: - ViewLifeCycle
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ final class CitiesListViewController: UIViewController {
         setupViewModelDelegate()
         viewModel.viewDidLoad()
         loadDataWithLoader()
-
+        
     }
     
     // MARK: - Private Methods
@@ -44,7 +44,7 @@ final class CitiesListViewController: UIViewController {
         view.backgroundColor = UIColor(named: "BackColor")
         setupCollectionView()
     }
- 
+    
     private func setupCollectionView() {
         view.addSubview(collectionView)
         
@@ -70,12 +70,12 @@ extension CitiesListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         cities.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CityItemCell", for: indexPath) as? CityItemCollectionViewCell else {
             return UICollectionViewCell()
         }
-
+        
         cell.configure(with: cities[indexPath.row])
         return cell
     }
@@ -111,20 +111,20 @@ extension CitiesListViewController: CitiesListViewModelDelegate {
         if let loader = self.loader {
             LoaderHelper.stopLoader(loader: loader)
         }
-
+        
         self.cities = cities
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
     }
-
+    
     func showError(_ error: Error) {
         if let loader = self.loader {
             LoaderHelper.stopLoader(loader: loader)
         }
         print("Error: \(error.localizedDescription)")
     }
-
+    
     
     func navigateToCityDetails(with cityId: String) {
         let viewController = CityDetailsViewController(cityId: cityId)
@@ -134,5 +134,5 @@ extension CitiesListViewController: CitiesListViewModelDelegate {
     private func loadDataWithLoader() {
         loader = LoaderHelper.loader(in: self.view)
         viewModel.fetchCities()
-        }
+    }
 }

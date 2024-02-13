@@ -19,7 +19,7 @@ class RegisterController: UIViewController {
     private let signUpButton = CustomButton(title: "Sign Up", hasBackground: true, fontSize: .big)
     private let signInButton = CustomButton(title: "Already have an account? Sign In.", fontSize: .med)
     
-
+    
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -52,7 +52,7 @@ class RegisterController: UIViewController {
         passwordField.translatesAutoresizingMaskIntoConstraints = false
         signUpButton.translatesAutoresizingMaskIntoConstraints = false
         signInButton.translatesAutoresizingMaskIntoConstraints = false
-
+        
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor),
             headerView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
@@ -79,7 +79,7 @@ class RegisterController: UIViewController {
             signUpButton.heightAnchor.constraint(equalToConstant: 55),
             signUpButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
             
-
+            
             
             signInButton.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 11),
             signInButton.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
@@ -107,7 +107,6 @@ class RegisterController: UIViewController {
             AlertManager.showInvalidEmailAlert(on: self)
             return
         }
-    
         
         AuthService.shared.registerUser(with: registerUserRequest) { [weak self] wasRegistered, error in
             guard let self = self else { return }
@@ -126,11 +125,11 @@ class RegisterController: UIViewController {
             }
         }
     }
-
+    
     
     @objc private func didTapSignIn() {
         let logInPage = LoginController()
-       self.navigationController?.pushViewController(logInPage, animated: true)
+        self.navigationController?.pushViewController(logInPage, animated: true)
     }
     
 }

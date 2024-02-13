@@ -9,10 +9,10 @@ import SwiftUI
 
 struct AddReviewView: View {
     @Environment(\.presentationMode) var
-        presentationMode
+    presentationMode
     @EnvironmentObject var listViewModel: 
-        AddReviewViewModel
-
+    AddReviewViewModel
+    
     @State private var reviewTitle: String = ""
     @State private var reviewText: String = ""
     @State private var selectedPlace: Place =
@@ -31,14 +31,14 @@ struct AddReviewView: View {
         }
     }
     
-   private var formSection: some View {
+    private var formSection: some View {
         Form {
             Picker("Select City / Region", 
                    selection: $selectedPlace) {
-                   ForEach(Place.allCases, id:
-                        \.self) { place in
-                        Text(place.rawValue)
-                           .tag(place)
+                ForEach(Place.allCases, id:
+                            \.self) { place in
+                    Text(place.rawValue)
+                        .tag(place)
                 }
             }
             VStack {
@@ -50,10 +50,10 @@ struct AddReviewView: View {
                 TextField("Enter Title", text: 
                             $reviewTitle)
                 TextEditor(text: $reviewText)
-                        .frame(height: 50)
-                        .overlay(RoundedRectangle(cornerRadius: 8)
+                    .frame(height: 50)
+                    .overlay(RoundedRectangle(cornerRadius: 8)
                         .stroke(Color.gray, lineWidth: 1))
-                        .padding(.horizontal)
+                    .padding(.horizontal)
                 Button(action: addReview) {
                     Text("Add Review")
                         .foregroundColor(.white)

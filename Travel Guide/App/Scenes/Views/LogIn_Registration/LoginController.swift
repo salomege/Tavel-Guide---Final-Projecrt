@@ -33,7 +33,7 @@ class LoginController: UIViewController {
         
         signInButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
         newUserButton.addTarget(self, action: #selector(didTapNewUser), for: .touchUpInside)
-       
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,18 +45,18 @@ class LoginController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .systemBackground
         
-       view.addSubview(headerView)
-       view.addSubview(emailField)
-       view.addSubview(passwordField)
-       view.addSubview(signInButton)
-       view.addSubview(newUserButton)
-       
+        view.addSubview(headerView)
+        view.addSubview(emailField)
+        view.addSubview(passwordField)
+        view.addSubview(signInButton)
+        view.addSubview(newUserButton)
+        
         headerView.translatesAutoresizingMaskIntoConstraints = false
         emailField.translatesAutoresizingMaskIntoConstraints = false
         passwordField.translatesAutoresizingMaskIntoConstraints = false
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         newUserButton.translatesAutoresizingMaskIntoConstraints = false
-
+        
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor),
             headerView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
@@ -127,5 +127,5 @@ class LoginController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-  
+    
 }

@@ -16,7 +16,7 @@ struct City: Decodable {
     let detailsId: String
     let title: String
     let posterPath: String
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case detailsId

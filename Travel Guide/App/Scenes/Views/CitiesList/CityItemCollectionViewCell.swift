@@ -21,7 +21,7 @@ final class CityItemCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-
+    
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -72,7 +72,7 @@ final class CityItemCollectionViewCell: UICollectionViewCell {
         genreLabel.text = nil
         titleLabel.text = nil
     }
-
+    
     // MARK: - Private Methods
     private func addSubview() {
         contentView.addSubview(cityImageView)
@@ -130,7 +130,7 @@ class ImageCache {
     private var cache = NSCache<NSString, UIImage>()
     
     func getImage(url: URL, completion: @escaping (UIImage?) -> Void) {
-
+        
         if let cachedImage = cache.object(forKey: url.absoluteString as NSString) {
             completion(cachedImage)
             return

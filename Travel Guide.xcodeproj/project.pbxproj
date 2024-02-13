@@ -153,9 +153,10 @@
 		F19A89932B588D6700CB4AB5 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				F19A89772B58811900CB4AB5 /* SceneDelegate.swift */,
 				F19A89752B58811900CB4AB5 /* AppDelegate.swift */,
-				F1B2B0962B7188C0003B557A /* LoaderHelper.swift */,
+				F19A89772B58811900CB4AB5 /* SceneDelegate.swift */,
+				F1A3F35F2B7B599D00103BD2 /* Components */,
+				F1A3F35E2B7B578900103BD2 /* Managers */,
 				F19A89942B588D9000CB4AB5 /* Scenes */,
 				F19A89962B588DBD00CB4AB5 /* Models */,
 			);
@@ -179,6 +180,7 @@
 				F19A89992B588E6B00CB4AB5 /* CitiesList */,
 				F19A899A2B588E8900CB4AB5 /* Map */,
 				F19A899B2B588E9300CB4AB5 /* FoodAdvisor */,
+				F1B2B08D2B6CF1B2003B557A /* Currency Convertor */,
 				F19A899C2B588EA600CB4AB5 /* Reviews */,
 			);
 			path = Views;
@@ -219,7 +221,6 @@
 		F19A89992B588E6B00CB4AB5 /* CitiesList */ = {
 			isa = PBXGroup;
 			children = (
-				F19A89A32B5A04C100CB4AB5 /* NetworkManager.swift */,
 				F19A898B2B58880300CB4AB5 /* CitiesListViewController.swift */,
 				F19A899D2B59DECD00CB4AB5 /* CityItemCollectionViewCell.swift */,
 				F19A89A12B59E01400CB4AB5 /* CitiesListViewModel.swift */,
@@ -231,7 +232,6 @@
 		F19A899A2B588E8900CB4AB5 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				F1B2AF652B5F868B003B557A /* LocationsDataService.swift */,
 				F1B2AF672B5F86DE003B557A /* LocationsView.swift */,
 				F1B2AF692B5F8874003B557A /* LocationPreviewView.swift */,
 				F1B2AF6B2B5F88E2003B557A /* LocationListView.swift */,
@@ -255,7 +255,6 @@
 			children = (
 				F1B2AF6F2B5F8D03003B557A /* AddReviewView.swift */,
 				F1B2AF732B5F9099003B557A /* AddReviewViewModel.swift */,
-				F1B2B08D2B6CF1B2003B557A /* Currency Convertor */,
 			);
 			path = Reviews;
 			sourceTree = "<group>";
@@ -269,27 +268,37 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
+		F1A3F35E2B7B578900103BD2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F19A89A32B5A04C100CB4AB5 /* NetworkManager.swift */,
+				F14845E72B774EC100728A4F /* CurrencyNetworkManager.swift */,
+				F1B2AF652B5F868B003B557A /* LocationsDataService.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F1A3F35F2B7B599D00103BD2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F1B2B0962B7188C0003B557A /* LoaderHelper.swift */,
+				F1B2AF9F2B67A3C2003B557A /* HeaderView.swift */,
+				F1B2AFA12B67A481003B557A /* CostomTextField.swift */,
+				F1B2AFA32B67A500003B557A /* CostomButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		F1B2AF9E2B67A267003B557A /* LogIn_Registration */ = {
 			isa = PBXGroup;
 			children = (
 				F1B2AFA52B67B045003B557A /* LoginController.swift */,
 				F1B2AFA72B67B0EC003B557A /* RegistrationController.swift */,
-				F1B2AF9F2B67A3C2003B557A /* HeaderView.swift */,
-				F1B2AFA12B67A481003B557A /* CostomTextField.swift */,
-				F1B2AFA32B67A500003B557A /* CostomButton.swift */,
-				F1B2AFE92B687387003B557A /* Firebase */,
-			);
-			path = LogIn_Registration;
-			sourceTree = "<group>";
-		};
-		F1B2AFE92B687387003B557A /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
 				F1B2AFEA2B6873D7003B557A /* AuthService.swift */,
 				F1B2AFF02B68911B003B557A /* AlertManager.swift */,
 				F1B2AFF22B68916A003B557A /* Validator.swift */,
 			);
-			path = Firebase;
+			path = LogIn_Registration;
 			sourceTree = "<group>";
 		};
 		F1B2AFF42B68E5C0003B557A /* Frameworks */ = {
@@ -304,7 +313,6 @@
 			children = (
 				F1B2B08E2B6CF1D5003B557A /* CurrencyView.swift */,
 				F1B2B0922B6CF262003B557A /* CurrencyViewModel.swift */,
-				F14845E72B774EC100728A4F /* CurrencyNetworkManager.swift */,
 			);
 			path = "Currency Convertor";
 			sourceTree = "<group>";

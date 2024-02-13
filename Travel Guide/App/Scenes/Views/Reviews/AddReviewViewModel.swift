@@ -13,13 +13,13 @@ class AddReviewViewModel: ObservableObject {
             saveReviews()
         }
     }
-
+    
     let itemsKey: String = "items_list"
-
+    
     init() {
         getReviews()
     }
-
+    
     func getReviews() {
         guard
             let data = UserDefaults.standard.data(forKey: itemsKey),
@@ -29,22 +29,21 @@ class AddReviewViewModel: ObservableObject {
         }
         reviews = savedReviews
     }
-
+    
     func deleteReview(indexSet: IndexSet) {
-      reviews.remove(atOffsets: indexSet)
+        reviews.remove(atOffsets: indexSet)
     }
-
-   
+    
     func addReview(title: String, reviewText: String, date: Date, place: Place) {
         let newItem = Review(place: place, title: title, review: reviewText, date: date)
         reviews.append(newItem)
         print(newItem)
     }
-
+    
     func saveReviews() {
         if let encodeData = try? JSONEncoder().encode(reviews) {
             UserDefaults.standard.set(encodeData, forKey: itemsKey)
-           
+            
         }
     }
 }

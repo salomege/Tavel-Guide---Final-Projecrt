@@ -55,7 +55,7 @@ final class FoodAdvisorViewController: UIViewController, UITextFieldDelegate {
         stackView.spacing = 16
         return stackView
     }()
-        
+    
     
     // MARK: - lifeCycle
     override func viewDidLoad() {
@@ -74,7 +74,7 @@ final class FoodAdvisorViewController: UIViewController, UITextFieldDelegate {
             updateHeaderImage()
         }
     }
-
+    
     private func updateHeaderImage() {
         if traitCollection.userInterfaceStyle == .dark {
             headerImage.image = UIImage(named: "food-dark")
@@ -151,32 +151,32 @@ final class FoodAdvisorViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func updateUI() {
-            guard let info = viewModel.result else { return }
-            
-            let imageName = info.photo
-            self.resultImage.image = UIImage(named: imageName)
-            
-            let nameAttributes: [NSAttributedString.Key: Any] = [
-                .foregroundColor: UIColor(named: "grey-white-text") ?? .gray,
-                .font: UIFont.boldSystemFont(ofSize: 18)
-            ]
-            
-            let ingredientsAttributes: [NSAttributedString.Key: Any] = [
-                .foregroundColor: UIColor(named: "black-white-text") ?? .gray,
-                .font: UIFont.systemFont(ofSize: 14)
-            ]
-            
-            let aboutInfoAttributes: [NSAttributedString.Key: Any] = [
-                .foregroundColor: UIColor(named: "grey-white-text") ?? .gray,
-                .font: UIFont.systemFont(ofSize: 14)
-            ]
-            
-            let attributedText = NSMutableAttributedString(string: "\(info.name)\n", attributes: nameAttributes)
-            attributedText.append(NSAttributedString(string: "Ingredients: \(info.ingredients)\n", attributes: ingredientsAttributes))
-            attributedText.append(NSAttributedString(string: "\(info.aboutInfo)", attributes: aboutInfoAttributes))
-            
-            self.resultLabel.attributedText = attributedText
-        }
+        guard let info = viewModel.result else { return }
+        
+        let imageName = info.photo
+        self.resultImage.image = UIImage(named: imageName)
+        
+        let nameAttributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor(named: "grey-white-text") ?? .gray,
+            .font: UIFont.boldSystemFont(ofSize: 18)
+        ]
+        
+        let ingredientsAttributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor(named: "black-white-text") ?? .gray,
+            .font: UIFont.systemFont(ofSize: 14)
+        ]
+        
+        let aboutInfoAttributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor(named: "grey-white-text") ?? .gray,
+            .font: UIFont.systemFont(ofSize: 14)
+        ]
+        
+        let attributedText = NSMutableAttributedString(string: "\(info.name)\n", attributes: nameAttributes)
+        attributedText.append(NSAttributedString(string: "Ingredients: \(info.ingredients)\n", attributes: ingredientsAttributes))
+        attributedText.append(NSAttributedString(string: "\(info.aboutInfo)", attributes: aboutInfoAttributes))
+        
+        self.resultLabel.attributedText = attributedText
+    }
     
     private func showAlert(with title: String) {
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)

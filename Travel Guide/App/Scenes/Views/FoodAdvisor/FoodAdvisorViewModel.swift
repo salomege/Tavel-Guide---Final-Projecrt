@@ -8,20 +8,20 @@
 import Foundation
 
 class FoodAdvisorViewModel {
-
+    
     var result: Info? = nil
-
+    
     struct Info {
         let photo: String
         let name: String
         let ingredients: String
         let aboutInfo: String
     }
-
+    
     func fetchData(regionName: String, completion: @escaping (Result<Dish, Error>) -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             let matchingDish = Dish.dummyData.first(where: { $0.region == regionName.capitalized })
-
+            
             if let dish = matchingDish {
                 let info = Info(
                     photo: dish.photo,

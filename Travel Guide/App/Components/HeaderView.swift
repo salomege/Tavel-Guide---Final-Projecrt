@@ -57,8 +57,8 @@ class HeaderView: UIView {
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         subTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-
-
+        
+        
         NSLayoutConstraint.activate([
             logoImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
             logoImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),

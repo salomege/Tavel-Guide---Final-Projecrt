@@ -28,7 +28,7 @@ final class CitiesListViewModel {
         }
     }
     
-     func fetchCities() {
+    func fetchCities() {
         NetworkManager.shared.fetchCities { [weak self] result in
             switch result {
             case .success(let cities):

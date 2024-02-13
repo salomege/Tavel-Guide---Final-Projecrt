@@ -30,14 +30,14 @@ class TabBarController: UITabBarController {
         navBarAppearance.configureWithTransparentBackground()
         navBarAppearance.backgroundColor = .systemBackground
         navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(named: "black-white-text") ?? .white]
-
-
+        
+        
         UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
         
         tabBar.backgroundColor = .systemBackground
         tabBar.tintColor = UIColor(named: "AccentColor")
         tabBar.unselectedItemTintColor = .systemGray2
-    
+        
     }
     
     // MARK: - Methods
@@ -97,13 +97,13 @@ class TabBarController: UITabBarController {
         navController.tabBarItem.title = title
         navController.tabBarItem.image = image
         navController.tabBarItem.setTitleTextAttributes([.foregroundColor: UIColor(named: "TabBarText") ?? .white], for: .selected)
-                           
+        
         navController.tabBarItem.setTitleTextAttributes([.foregroundColor: UIColor(named: "black-white-text") ?? .white], for: .selected)
-
-                                  
+        
+        
         
         let logoutButton = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: 
-        #selector(logoutButtonTapped))
+                                            #selector(logoutButtonTapped))
         controller.navigationItem.rightBarButtonItem = logoutButton
         controller.title = title
         
@@ -114,12 +114,12 @@ class TabBarController: UITabBarController {
     @objc func logoutButtonTapped() {
         AuthService.shared.signOut { [weak self] error in
             guard let self = self else { return }
-                if let sceneDelegate = self.view.window?.windowScene?.delegate as? 
-                    SceneDelegate {
-                    sceneDelegate.checkAuthentication()
-                }
+            if let sceneDelegate = self.view.window?.windowScene?.delegate as? 
+                SceneDelegate {
+                sceneDelegate.checkAuthentication()
             }
         }
     }
-    
+}
+
 

@@ -8,9 +8,9 @@
 import UIKit
 
 final class CityDetailsViewController: UIViewController {
-
+    
     // MARK: - UI Components
-
+    
     private let cityImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -19,13 +19,13 @@ final class CityDetailsViewController: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-
+    
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
-
+    
     private let scrollViewContainer: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
@@ -33,7 +33,7 @@ final class CityDetailsViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-
+    
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -47,38 +47,38 @@ final class CityDetailsViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
+    
     private var viewModel: CityDetailsViewModel
-
+    
     // MARK: - Init
     init(cityId: String) {
         viewModel = DefaultCityDetailsViewModel(cityId: cityId)
         super.init(nibName: nil, bundle: nil)
-
+        
         viewModel.delegate = self
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     // MARK: - ViewLifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         viewModel.viewDidLoad()
     }
-
+    
     // MARK: - Private Methods
     private func setup() {
         view.backgroundColor = UIColor(named: "BackColor")
-
+        
         setupCityImageView()
         setupScrollView()
         setupDescriptionLabel()
         setupTopPlaces()
     }
-
+    
     private func setupCityImageView() {
         view.addSubview(cityImageView)
         NSLayoutConstraint.activate([
@@ -87,7 +87,7 @@ final class CityDetailsViewController: UIViewController {
             cityImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
         ])
     }
-
+    
     private func setupScrollView() {
         view.addSubview(scrollView)
         NSLayoutConstraint.activate([
@@ -96,9 +96,9 @@ final class CityDetailsViewController: UIViewController {
             scrollView.topAnchor.constraint(equalTo: cityImageView.bottomAnchor, constant: 30),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-
+        
         scrollView.addSubview(scrollViewContainer)
-
+        
         NSLayoutConstraint.activate([
             scrollViewContainer.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             scrollViewContainer.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
@@ -107,8 +107,8 @@ final class CityDetailsViewController: UIViewController {
             scrollViewContainer.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
     }
-
-
+    
+    
     private func setupDescriptionLabel() {
         scrollViewContainer.addArrangedSubview(descriptionLabel)
     }
@@ -123,14 +123,14 @@ extension CityDetailsViewController: CityDetailsViewModelDelegate {
         Task {
             navigationItem.title = city.title
             descriptionLabel.text = city.overview
-
+            
         }
     }
-
+    
     func showError(_ error: Error) {
         print("Error")
     }
-
+    
     func cityDetailsImageFetched(_ image: UIImage) {
         Task {
             cityImageView.image = image

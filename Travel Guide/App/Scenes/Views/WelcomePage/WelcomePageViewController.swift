@@ -87,7 +87,7 @@ class WelcomePageViewController: UIViewController {
         super.viewDidLoad()
         setup()
         
-       submitButton.addTarget(self, action: #selector(didTapJoinUs), for: .touchUpInside)
+        submitButton.addTarget(self, action: #selector(didTapJoinUs), for: .touchUpInside)
         
         
     }

@@ -35,41 +35,41 @@ struct PopupView: View {
 }
 struct LocationDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-      PopupView(location: LocationsDataService.locations.first!)
-        .environmentObject(LocationsViewModel())
-        .background(.blue)
-        .previewLayout(.sizeThatFits)
+        PopupView(location: LocationsDataService.locations.first!)
+            .environmentObject(LocationsViewModel())
+            .background(.blue)
+            .previewLayout(.sizeThatFits)
     }
 }
 
 extension PopupView{
-  
-  
-  
-  private var titleSection: some View{
-
-  VStack(alignment: .leading, spacing: 8){
-    Text(location.name)
-      .font(.largeTitle)
-      .fontWeight(.semibold)
-    Text(location.cityName)
-      .font(.title3)
-      .foregroundColor(.secondary)
-
-  }
-}
-  
-  private var descriptionSection: some View{
-    VStack(alignment: .leading, spacing: 16){
-      Text(location.description)
-            .font(.subheadline)
-                       .foregroundColor(.secondary)
-                       .lineLimit(nil)
-                       .fixedSize(horizontal: false, vertical: true) 
-      
+    
+    
+    
+    private var titleSection: some View{
+        
+        VStack(alignment: .leading, spacing: 8){
+            Text(location.name)
+                .font(.largeTitle)
+                .fontWeight(.semibold)
+            Text(location.cityName)
+                .font(.title3)
+                .foregroundColor(.secondary)
+            
+        }
     }
-  }
-  
+    
+    private var descriptionSection: some View{
+        VStack(alignment: .leading, spacing: 16){
+            Text(location.description)
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+                .lineLimit(nil)
+                .fixedSize(horizontal: false, vertical: true) 
+            
+        }
+    }
+    
     struct RoundedCorners: View {
         var color: Color = .blue
         var tl: CGFloat = 0.0
@@ -83,7 +83,7 @@ extension PopupView{
                     
                     let w = geometry.size.width
                     let h = geometry.size.height
-                
+                    
                     let tr = min(min(self.tr, h/2), w/2)
                     let tl = min(min(self.tl, h/2), w/2)
                     let bl = min(min(self.bl, h/2), w/2)
@@ -104,7 +104,7 @@ extension PopupView{
             }
         }
     }
-  
+    
     var background: some View {
         if colorScheme == .dark {
             return RoundedCorners(color: .black, tl: 10, tr: 10, bl: 0, br: 0)
