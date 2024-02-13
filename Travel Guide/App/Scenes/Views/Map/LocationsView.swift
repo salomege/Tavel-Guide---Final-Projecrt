@@ -37,6 +37,9 @@ struct LocationsView: View {
                                 .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
                         }
                     }
+                    .sheet(item: $vm.sheetLoction) { loction  in
+                      LocationDetailsView(location: loction)
+                    }
                 }
             }
         }

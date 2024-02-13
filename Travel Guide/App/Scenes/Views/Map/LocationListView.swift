@@ -38,10 +38,10 @@ struct LocationListView_Preview: PreviewProvider {
 extension LocationListView {
     private func listRowView(location: Location) -> some View {
         HStack {
-//            if let imageName = location.imageNames.first {
+//            if let imageName = location.imageName.first {
 //                Image(imageName)
 //                    .resizable()
-//                    .scaleToFill()
+//                    .scaledToFit()
 //                    .frame(width:45, height:45)
 //                    .cornerRadius(10)
 //            }

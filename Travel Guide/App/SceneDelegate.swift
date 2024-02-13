@@ -28,10 +28,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
        
     func checkAuthentication() {
         if Auth.auth().currentUser == nil {
-            if UserDefaults.standard.bool(forKey: "userJoined") {
-                goToController(with: LoginController())
+            if UserDefaults.standard.bool(forKey: "userJoined")  {
+          //    goToController(with: LoginController())
+             goToController(with: WelcomePageViewController())
             } else {
-                goToController(with: WelcomePageViewController())
+               goToController(with: WelcomePageViewController())
             }
         } else {
             let user = Auth.auth().currentUser!

@@ -16,11 +16,11 @@ struct LocationPreviewView: View {
     var body: some View {
         HStack(alignment: .bottom, spacing: 0) {
         VStack(spacing: 16.0) {
-         //   imageSection
+           imageSection
             titleSection
         }
         VStack(spacing: 8) {
-            //learnMoreButton
+            learnMoreButton
             nextButton
         }
     }
@@ -35,20 +35,20 @@ struct LocationPreviewView: View {
 
 
 extension LocationPreviewView {
-   // private var imageSection: some View {
-    //            ZStack {
-    //                if let imageName = location.imageNames.first {
-    //                    Image(imageName)
-    //                        .resizable()
-    //                        .scaledToFill()
-    //                        .frame(width:100, height: 100)
-    //                        .cornerRadius(10)
-    //                }
-    //            }
-    //            .padding(6)
-    //            .background(Color.green)
-    //            .cornerRadius(10)
-  //  }
+    private var imageSection: some View {
+        ZStack {
+            if !location.imageName.isEmpty {
+                Image(location.imageName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width:100, height: 100)
+                    .cornerRadius(10)
+            }
+        }
+        .padding(6)
+        .background(Color.green)
+        .cornerRadius(10)
+    }
     
     private var titleSection: some View {
         VStack(alignment: .leading, spacing: 4) {
@@ -61,16 +61,16 @@ extension LocationPreviewView {
         }
         .frame(maxWidth: .infinity)
 }
-//    private var learnMoreButton: some View {
-//        Button {
-//            
-//        } label: {
-//            Text("Learn more")
-//                .font(.headline)
-//                .frame(width:124, height: 34)
-//        }
-//        .buttonStyle(.borderedProminent)
-//    }
+    private var learnMoreButton: some View {
+        Button {
+            vm.sheetLoction = location
+        } label: {
+            Text("Learn more")
+                .font(.headline)
+                .frame(width:124, height: 34)
+        }
+        .buttonStyle(.borderedProminent)
+    }
     
     private var nextButton: some View {
         Button {

@@ -11,6 +11,8 @@ import MapKit
 struct Location: Identifiable, Equatable {
     let cityName: String
     let name: String
+    let imageName: String
+    let description: String
     let coordinates: CLLocationCoordinate2D
     
     
