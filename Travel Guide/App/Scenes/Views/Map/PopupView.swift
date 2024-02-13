@@ -11,6 +11,8 @@ struct PopupView: View {
     
     @EnvironmentObject private var vm : LocationsViewModel
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var location : Location
     var body: some View {
         ZStack {
@@ -53,12 +55,7 @@ extension PopupView{
     Text(location.cityName)
       .font(.title3)
       .foregroundColor(.secondary)
-      .background(RoundedCorners(color: .white,
-                                 tl:10,
-                                 tr: 10,
-                                 bl:0,
-                                 br: 0
-                                ))
+
   }
 }
   
@@ -86,8 +83,7 @@ extension PopupView{
                     
                     let w = geometry.size.width
                     let h = geometry.size.height
-                    
-                    // Make sure we do not exceed the size of the rectangle
+                
                     let tr = min(min(self.tr, h/2), w/2)
                     let tl = min(min(self.tl, h/2), w/2)
                     let bl = min(min(self.bl, h/2), w/2)
@@ -110,7 +106,12 @@ extension PopupView{
     }
   
     var background: some View {
-          RoundedCorners(color: .white, tl: 10, tr: 10, bl: 0, br: 0)
-              .shadow(color: .black.opacity(0.2), radius: 3)
-      }
+        if colorScheme == .dark {
+            return RoundedCorners(color: .black, tl: 10, tr: 10, bl: 0, br: 0)
+                .shadow(color: .white.opacity(0.2), radius: 3)
+        } else {
+            return RoundedCorners(color: .white, tl: 10, tr: 10, bl: 0, br: 0)
+                .shadow(color: .black.opacity(0.2), radius: 3)
+        }
+    }
 }
